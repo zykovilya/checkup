@@ -5,6 +5,6 @@ services:
     container_name: nginx
     image: nginx
     ports:
-      - 80:80
+      - 8181:80
     volumes:
       - ./data:/usr/share/nginx/html
