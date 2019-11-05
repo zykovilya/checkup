@@ -1,0 +1,32 @@
+[
+  {
+    "title": {
+      "content": "1. Сделайте анализы",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Нужно сделать анализы это очень важно",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "http://hostname.ru/someimage.jpg",
+      "color": ""
+    }
+  },
+  {
+    "title": {
+      "content": "2 Заполните анкету",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Заполните анкету - это данные для врача",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "",
+      "color": "#FF00AA"
+    }
+  }
+]
+
+

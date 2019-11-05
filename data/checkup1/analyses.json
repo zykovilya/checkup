@@ -1,0 +1,24 @@
+{
+  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "ready_working_days": 3,
+  "laboratoriesUrl": "https://hostname.ru/laboratories.json",
+  "sendLaboratoryEndpoint": "https://hostname.ru/set_laboratory?patientId=${patientId}&productId=${productId}&officeId=${laboratoryId}&token=${JSESSIONID}",
+  "preparationButton": {
+    "name": "Как подготовиться?",
+    "descriptionContent": {
+      "title": "Как подготовиться.",
+      "blocks": [
+        {
+          "title": "Кровь",
+          "description":  "Сдача крови происходит после ночного периода голодания от 8 часов",
+          "items": []
+        },
+        {
+          "title": "В ваше исследование входят следующие анализы",
+          "description":  "",
+          "items": ["Общий анализ крови","СОЭ","Гемоглобин"]
+        }
+      ]
+    }
+  }
+}

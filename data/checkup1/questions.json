@@ -1,0 +1,5 @@
+{
+  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "url": "http://hostname.ru/questions/someId.html?patientId=${patientId}&productId=${productId}&token=${JSESSIONID}"
+}
+

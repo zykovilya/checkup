@@ -1,0 +1,44 @@
+{
+  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "title": {
+    "description": "Программа обследования",
+    "header": "Здоровое сердце"
+  },
+  "items": [
+    {
+      "description": "Материал для анализов",
+      "header": "Кровь и моча",
+      "iconUrl": "http://hostname.ru/someimage.jpg"
+    },
+    {
+      "description": "Срок готовности",
+      "header": "До 3 рабочих дней",
+      "iconUrl": "http://hostname.ru/someimage2.jpg"
+    }
+  ],
+  "descriptionButton": {
+    "name": "Как подготовиться к анализам?",
+    "descriptionContent": {
+      "title": "Как подготовиться",
+      "blocks": [
+        {
+          "title": "Кровь",
+          "description": "Сдача крови происходит после ночного периода голодания от 8 часов",
+          "items": []
+        },
+        {
+          "title": "В ваше исследование входят следующие анализы",
+          "description": "",
+          "items": ["Общий анализ крови", "СОЭ", "Гемоглобин" ]
+        }
+      ]
+    }
+  },
+  "nextButton": {
+    "name": "Записаться в лабораторию"
+  },
+  "description": "текст описания продукта ...."
+}
+
+
+

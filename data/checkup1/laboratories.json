@@ -1,0 +1,57 @@
+[
+  {
+    "id": "invitro",
+    "name": "Инвитро",
+    "logo": "https://www.invitro.ru/local/templates/invitro_main/src/image/elements/main-logo.svg",
+    "offices": [
+      {
+        "id":"26884695-597b-47ad-b239-22dc65e310ab",
+        "title": "Люблино", 
+        "city": "Москва",
+        "address": "г. Москва, бульвар Генерала Карбышева, д. 16",
+        "coordinates": {
+          "lat": "83.1231123",
+          "long": "63.01031231"
+        },
+        "workingTime": {
+          "weekdays": {
+            "start": "10:00",
+            "end": "20:00"
+          },
+          "weekend": {
+            "start": "10:00",
+            "end": "20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kdl",
+    "name": "КДЛ",
+    "logo": "https://kdl.ru/templates/src/sprites/svg/logo.svg",
+    "offices": [
+      {
+        "id":"16884695-597b-47ad-b239-22dc65e310a2",
+        "city": "Москва",
+        "address": "г. Москва, шоссе Энтузиастов, д. 17",
+        "coordinates": {
+          "lat": "83.1231123",
+          "long": "63.01031231"
+        },
+        "workingTime": {
+          "weekdays": {
+            "start": "10:00",
+            "end": "20:00"
+          },
+          "weekend": {
+            "start": "10:00",
+            "end": "20:00"
+          }
+        }
+      }
+    ]
+  }
+]
+
+
