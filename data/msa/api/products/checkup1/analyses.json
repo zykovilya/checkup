@@ -1,6 +1,5 @@
 {
   "imageUrl": "http://hostname.ru/someimage.jpg",
-  "ready_working_days": 3,
   "laboratoriesUrl": "https://hostname.ru/laboratories.json",
   "sendLaboratoryEndpoint": "https://hostname.ru/set_laboratory?patientId=${patientId}&productId=${productId}&officeId=${laboratoryId}&token=${JSESSIONID}",
   "preparationButton": {

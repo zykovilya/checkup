@@ -1,5 +1,7 @@
 {
   "imageUrl": "http://hostname.ru/someimage.jpg",
+  "laboratoriesUrl": "https://hostname.ru/laboratories.json",
+  "sendLaboratoryEndpoint": "https://hostname.ru/set_laboratory?patientId=${patientId}&productId=${productId}&officeId=${laboratoryId}&token=${JSESSIONID}",
   "title": {
     "description": "Программа обследования",
     "header": "Здоровое сердце"

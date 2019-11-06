@@ -1,4 +1,6 @@
 {
-  "imageUrl": "http://hostname.ru/someimage.jpg"
+  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "descripton": "Результаты ваших анализов будут добавлены в мед.карту"
+
 }
 
