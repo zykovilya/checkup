@@ -9,8 +9,8 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "http://hostname.ru/someimage.jpg",
-      "color": ""
+      "imageUrl": "http://hostname.ru/someimage.jpg", "//":"not required",
+      "color": "", "//":"not required"
     }
   },
   {
@@ -23,8 +23,8 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "",
-      "color": "#FF00AA"
+      "imageUrl": "", "//":"not required",
+      "color": "#FF00AA", "//":"not required"
     }
   }
 ]
