@@ -1,6 +1,6 @@
 {
-  "imageUrl": "http://hostname.ru/someimage.jpg",
-  "laboratoriesUrl": "https://hostname.ru/laboratories.json",
+  "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.jpg",
+  "laboratoriesUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/laboratories.json",
   "sendLaboratoryEndpoint":"https://test-telemed.drclinics.ru/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}, token=${JSESSIONID}",
   "preparationButton": {
     "name": "Как подготовиться?",

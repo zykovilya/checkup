@@ -1,5 +1,5 @@
 {
-  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.jpg",
   "title": {
     "description": "Программа обследования",
     "header": "Здоровое сердце"
@@ -8,12 +8,12 @@
     {
       "description": "Материал для анализов",
       "header": "Кровь и моча",
-      "iconUrl": "http://hostname.ru/someimage.jpg"
+      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someicon.svg"
     },
     {
       "description": "Срок готовности",
       "header": "До 3 рабочих дней",
-      "iconUrl": "http://hostname.ru/someimage2.jpg"
+      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someicon.svg"
     }
   ],
   "descriptionButton": {
