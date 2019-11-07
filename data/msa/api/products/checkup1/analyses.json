@@ -1,6 +1,5 @@
 {
   "imageUrl": "http://hostname.ru/someimage.jpg",
-  "ready_working_days": 3,
   "laboratoriesUrl": "https://hostname.ru/laboratories.json",
   "sendLaboratoryEndpoint":"https://test-telemed.drclinics.ru/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}, token=${JSESSIONID}",
   "preparationButton": {

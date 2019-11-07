@@ -1,4 +1,12 @@
 {
-  "imageUrl": "http://hostname.ru/someimage.jpg"
+  "imageUrl": "http://hostname.ru/someimage.jpg",
+  "description": "Результаты ваших анализов будут добавлены в мед.карту",  "//":"not required",
+  "items": [
+    {
+      "description": "Обязательно дождитесь СМС о готовности анализов и только после этого запишитесь на консультацию", "//":"not required",
+      "iconUrl": "http://hostname.ru/someimage.jpg", "//":"not required"
+    }
+  ]
+
 }
 
