@@ -1,5 +1,5 @@
 {
   "imageUrl": "http://hostname.ru/someimage.jpg",
-  "url": "https://test-telemed.drclinics.ru/msa/api/questions", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}"
+  "url": "https://test-telemed.drclinics.ru/msa/api/questions", "//": "Параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}"
 }
 
