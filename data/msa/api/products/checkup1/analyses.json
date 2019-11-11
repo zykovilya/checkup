@@ -3,7 +3,7 @@
   "laboratoriesUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/laboratories.json",
   "sendLaboratoryEndpoint":"https://test-telemed.drclinics.ru/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}, token=${JSESSIONID}",
   "preparationButton": {
-    "name": "Как подготовиться?",
+    "name": "Что входит в обследование",
     "descriptionContent": {
       "title": "Как подготовиться.",
       "blocks": [
