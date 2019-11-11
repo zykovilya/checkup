@@ -1,6 +1,6 @@
 {
   "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.jpg",
-  "url": "https://test-telemed.drclinics.ru/msa/api/questions", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}",
+  "url": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/questions/sample.html", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}",
   "successRedirectUrl": "https://test-telemed.drclinics.ru/msa/api/questions/success.html", "//": "url куда редиректит бэк анекты в случае когда всё ок, ответ http 200",
   "items": [
     {
