@@ -3,6 +3,7 @@
     "id": "invitro",
     "name": "Инвитро",
     "logo": "https://www.invitro.ru/local/templates/invitro_main/src/image/elements/main-logo.svg",
+    "color": "#0058FF",
     "offices": [
       {
         "id":"26884695-597b-47ad-b239-22dc65e310ab",
@@ -50,6 +51,7 @@
     "id": "kdl",
     "name": "КДЛ",
     "logo": "https://kdl.ru/templates/src/sprites/svg/logo.svg",
+    "color": "#55ee16",
     "offices": [
       {
         "id":"16884695-597b-47ad-b239-22dc65e310a2",
