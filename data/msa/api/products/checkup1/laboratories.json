@@ -3,7 +3,7 @@
     "id": "invitro",
     "name": "Инвитро",
     "logo": "https://www.invitro.ru/local/templates/invitro_main/src/image/elements/main-logo.svg",
-    "color": "#0058FF",
+    "color": "#0058FF", "//": "цвет пина на карте",
     "offices": [
       {
         "id":"26884695-597b-47ad-b239-22dc65e310ab",
