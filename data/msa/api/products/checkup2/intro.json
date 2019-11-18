@@ -1,0 +1,32 @@
+[
+  {
+    "title": {
+      "content": "1. Сделайте анализы",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Нужно сделать анализы это очень важно",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.jpg", "//":"not required",
+      "color": "", "//":"not required"
+    }
+  },
+  {
+    "title": {
+      "content": "2 Заполните анкету",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Заполните анкету - это данные для врача",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "", "//":"not required",
+      "color": "#FF00AA", "//":"not required"
+    }
+  }
+]
+
+

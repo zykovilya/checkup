@@ -1,0 +1,79 @@
+[
+  {
+    "id": "invitro",
+    "name": "Инвитро",
+    "logo": "https://www.invitro.ru/local/templates/invitro_main/src/image/elements/main-logo.svg",
+    "color": "#0058FF", "//": "цвет пина на карте",
+    "offices": [
+      {
+        "id":"26884695-597b-47ad-b239-22dc65e310ab",
+        "title": "Люблино", "//":"not required",
+        "city": "Москва",
+        "address": "г. Москва, ул. Совхозная, д. 10, корп. 1.",
+        "coordinates": {
+          "lat": "55.671086528411",
+          "long": "37.752597755697"
+        },
+        "workingTime": {
+          "weekdays": {
+            "start": "10:00",
+            "end": "20:00"
+          },
+          "weekend": {
+            "start": "10:00",
+            "end": "20:00"
+          }
+        }
+      },
+      {
+        "id":"66884695-597b-47ad-b239-22dc65e310ab",
+        "title": "Каширская", "//":"not required",
+        "city": "Москва",
+        "address": "г. Москва, Каширское шоссе, д. 68, корп. 2.",
+        "coordinates": {
+          "lat": "55.643124632615",
+          "long": "37.675517636648"
+        },
+        "workingTime": {
+          "weekdays": {
+            "start": "10:00",
+            "end": "20:00"
+          },
+          "weekend": {
+            "start": "10:00",
+            "end": "20:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "kdl",
+    "name": "КДЛ",
+    "logo": "https://kdl.ru/templates/src/sprites/svg/logo.svg",
+    "color": "#55ee16",
+    "offices": [
+      {
+        "id":"16884695-597b-47ad-b239-22dc65e310a2",
+        "city": "Москва",
+        "address": "г. Москва, Каширское шоссе, д. 68, корп. 2.",
+        "coordinates": {
+          "lat": "55.653124632615",
+          "long": "37.675517636648"
+        },
+        "workingTime": {
+          "weekdays": {
+            "start": "10:00",
+            "end": "20:00"
+          },
+          "weekend": {
+            "start": "10:00",
+            "end": "20:00"
+          }
+        }
+      }
+    ]
+  }
+]
+
+
