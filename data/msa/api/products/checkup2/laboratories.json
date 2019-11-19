@@ -2,7 +2,7 @@
   {
     "id": "invitro",
     "name": "Инвитро",
-    "logo": "https://www.invitro.ru/local/templates/invitro_main/src/image/elements/main-logo.svg",
+    "logo": "https://test-telemed.drclinics.ru/msa/api/labs/images/invitro.png",
     "color": "#0058FF", "//": "цвет пина на карте",
     "offices": [
       {
@@ -50,7 +50,7 @@
   {
     "id": "kdl",
     "name": "КДЛ",
-    "logo": "https://kdl.ru/templates/src/sprites/svg/logo.svg",
+    "logo": "https://test-telemed.drclinics.ru/msa/api/labs/images/kdl.png",
     "color": "#55ee16",
     "offices": [
       {
