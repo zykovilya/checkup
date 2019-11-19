@@ -1,8 +1,8 @@
 
 function getFileName()
-    local clientId  = ngx.var.clientId
+    local patientId  = ngx.var.patientId
     local clientProductId  = ngx.var.clientProductId
-    local outFile = string.format("/usr/share/nginx/html/files/%s_%s.json",clientId,clientProductId)
+    local outFile = string.format("/usr/share/nginx/html/files/state/%s_%s.json",patientId,clientProductId)
     return outFile
 end
 
