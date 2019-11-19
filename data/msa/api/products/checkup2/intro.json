@@ -5,11 +5,11 @@
       "textColor": "#FF00AA"
     },
     "description": {
-      "content": "Нужно сделать анализы это очень важно",
+      "content": "Запишитесь в лабораторию в удобном для вас месте, мы подскажем как подготовьтесь и сдать анализы.",
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.png", "//":"not required",
+      "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.jpg", "//":"not required",
       "color": "", "//":"not required"
     }
   },
@@ -19,7 +19,21 @@
       "textColor": "#FF00AA"
     },
     "description": {
-      "content": "Заполните анкету - это данные для врача",
+      "content": "Расскажите о состоянии здоровья, чтобы врач смог подготовиться к консультации.",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "", "//":"not required",
+      "color": "#FF00AA", "//":"not required"
+    }
+  },
+    {
+    "title": {
+      "content": "3 Запишитесь на консультацию:",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Запишитесь на удобное время к специалисту по диагностике, пройдите консультацию и получите карту питания",
       "textColor": "#FF00AA"
     },
     "background": {
