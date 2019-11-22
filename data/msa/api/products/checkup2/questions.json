@@ -5,7 +5,7 @@
   "items": [
     {
       "description": "Срок готовности анализов",     "//":"not required",
-      "header": "До 3 рабочих дней",                 "//":"not required",
+      "header": "До 11 рабочих дней",                 "//":"not required",
       "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup2/images/someicon.png", "//":"not required"
     }
   ]
