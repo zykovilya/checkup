@@ -1,0 +1,8 @@
+curl -X POST https://test-telemed.drclinics.ru/msa/api/clients/123/orders/46567/mobile/state   -d '{"test":"1"}'
+curl -X GET http://localhost:8181/msa/api/clients/70551/orders/46567/mobile/state
+curl -X POST http://localhost:8181/msa/api/clients/70551/orders/46567/mobile/state   -d '{"test":"1"}' -H "Cookie: JSESSIONID=66E9AC7974A06F92A99CECF78E2908A8" -v
+
+
+
+curl -X POST http://localhost:8181/msa/api/analyses/order   \
+ --data 'patientId=70551&clientProductId=234&laboratoryOfficeId=456' -H "Cookie: JSESSIONID=20175123790E66ED667B5CBC59480F11" -v
