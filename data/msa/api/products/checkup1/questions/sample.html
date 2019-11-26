@@ -64,7 +64,7 @@
 
     function changeInputByName(name) {
         let el = document.getElementsByName(name)[0];
-        el.value = getURLParameter('patientId');
+        el.value = getURLParameter(name);
         el.dispatchEvent(new Event("change"));
     }
 
