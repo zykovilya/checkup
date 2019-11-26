@@ -23,7 +23,19 @@ local patientInfo = auth.patientInfo(ngx, "https://test-telemed.drclinics.ru/api
 local buff = ""
 for k,v in pairs(params) do
     if(k~='patientId' and k~='productId' and k~='clientProductId') then
-        buff =buff .. k .. ": " .. v .."\n"
+        local strVal = nil
+        if type(v) == "table" then
+            for v2 in pairs(v) do
+                if(strVal==nil) then
+                    strVal =v2
+                else
+                    strVal = strVal ..  ", " .. v2
+                end
+            end
+        else
+            strVal = v
+        end
+        buff = buff .. k .. ": " .. strVal .. "\n"
     end
 end
 
