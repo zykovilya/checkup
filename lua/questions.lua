@@ -25,9 +25,9 @@ for k,v in pairs(params) do
     if(k~='patientId' and k~='productId' and k~='clientProductId') then
         local strVal = nil
         if type(v) == "table" then
-            for v2 in pairs(v) do
+            for k2, v2 in pairs(v) do
                 if(strVal==nil) then
-                    strVal =v2
+                    strVal = v2
                 else
                     strVal = strVal ..  ", " .. v2
                 end
