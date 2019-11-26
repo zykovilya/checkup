@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -57,10 +57,16 @@
     document.getElementById("uri").innerHTML = document.documentURI;
 
     (function() {
-        document.getElementsByName('patientId').value=getURLParameter('patientId');
-        document.getElementsByName('productId').value=getURLParameter('productId');
-        document.getElementsByName('clientProductId').value=getURLParameter('clientProductId');
+        changeInputByName('patientId');
+        changeInputByName('productId');
+        changeInputByName('clientProductId');
     })();
+
+    function changeInputByName(name) {
+        let el = document.getElementsByName(name)[0];
+        el.value = getURLParameter('patientId';
+        el.dispatchEvent(new Event("change"));
+    }
 
     function getURLParameter(sParam) {
         var sPageURL = window.location.search.substring(1);

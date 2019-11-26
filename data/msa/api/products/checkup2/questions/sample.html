@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,7 +7,11 @@
 <body>
 <div id="uri"></div>
 
-<form class="form-horizontal" action="https://test-telemed.drclinics.ru/msa/api/products/questions/success.html" method="post">
+<form class="form-horizontal" action="https://test-telemed.drclinics.ru/msa/api/products/questions/success.html" method="post" >
+    <input type="hidden" name="patientId" />
+    <input type="hidden" name="productId" />
+    <input type="hidden" name="clientProductId" />
+
     <fieldset>
 
         <!-- Form Name -->
@@ -17,30 +21,30 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Имя</label>
             <div class="col-md-4">
-                <input id="name" name="name" type="text" placeholder="представтесь" class="form-control input-md" required="">
+                <input id="name" name="Имя" type="text" placeholder="представтесь" class="form-control input-md" required="">
             </div>
         </div>
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="sex">Пол</label>
+            <label class="col-md-4 control-label" for="Пол">Пол</label>
             <div class="col-md-2">
-                <select id="sex" name="sex" class="form-control">
-                    <option value="male">мужчина</option>
-                    <option value="female">женщина</option>
+                <select id="Пол" name="Пол" class="form-control">
+                    <option value="мужчина">мужчина</option>
+                    <option value="женщина">женщина</option>
                 </select>
             </div>
         </div>
 
         <!-- Select Multiple -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="badHabits">Вредные привычки</label>
+            <label class="col-md-4 control-label" for="Вредные привычки">Вредные привычки</label>
             <div class="col-md-4">
-                <select id="badHabits" name="badHabits" class="form-control" multiple="multiple">
-                    <option value="1">Курение</option>
-                    <option value="2">Алкоголь</option>
-                    <option value="3">Наркотики</option>
-                    <option value="4">Лень</option>
+                <select id="Вредные привычки" name="Вредные привычки" class="form-control" multiple="multiple">
+                    <option value="Курение">Курение</option>
+                    <option value="Алкоголь">Алкоголь</option>
+                    <option value="Наркотики">Наркотики</option>
+                    <option value="Лень">Лень</option>
                 </select>
             </div>
         </div>
@@ -48,8 +52,34 @@
     </fieldset>
     <input type="submit" name="Отправить"/>
 </form>
-<script type="application/javascript">
+
+<script>
     document.getElementById("uri").innerHTML = document.documentURI;
+
+    (function() {
+        changeInputByName('patientId');
+        changeInputByName('productId');
+        changeInputByName('clientProductId');
+    })();
+
+    function changeInputByName(name) {
+        let el = document.getElementsByName(name)[0];
+        el.value = getURLParameter('patientId';
+        el.dispatchEvent(new Event("change"));
+    }
+
+    function getURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++){
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] === sParam){
+                return sParameterName[1];
+            }
+        }
+        return null;
+    }
+
 </script>
 
 </body>
