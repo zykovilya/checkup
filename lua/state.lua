@@ -5,7 +5,7 @@ local patientId  = ngx.var.patientId
 local clientProductId  = ngx.var.clientProductId
 
 
-local patientInfo = auth.patientInfo(ngx,"https://test-telemed.drclinics.ru/api/auth/person",patientId)
+local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",patientId)
 
 ngx.header["firstName"] = patientInfo.firstName
 

@@ -1,7 +1,7 @@
 {
-  "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.png",
-  "laboratoriesUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/laboratories.json",
-  "sendLaboratoryEndpoint":"https://test-telemed.drclinics.ru/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}, token=${JSESSIONID}",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someimage.png",
+  "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/laboratories.json",
+  "sendLaboratoryEndpoint":"{{TMP_SERVER_URL}}/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}",
   "preparationButton": {
     "name": "Что входит в обследование",
     "descriptionContent": {

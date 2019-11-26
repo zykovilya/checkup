@@ -20,7 +20,7 @@ local productId = utils.checkNotNull(params.productId, "need productId")
 local clientProductId = utils.checkNotNull(params.clientProductId, "need clientProductId")
 local laboratoryOfficeId = utils.checkNotNull(params.laboratoryOfficeId, "need laboratoryOfficeId")
 
-local patientInfo = auth.patientInfo(ngx, "https://test-telemed.drclinics.ru/api/auth/person", patientId)
+local patientInfo = auth.patientInfo(ngx, os.getenv("TMP_SERVER_URL").."/api/auth/person", patientId)
 -----------
 local subject = string.format("Пользователь %s %s %s(%s) записался в лабораторию %s.", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName, patientInfo.id, laboratoryOfficeId)
 local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s", subject, productId, clientProductId, cjson.encode(patientInfo))

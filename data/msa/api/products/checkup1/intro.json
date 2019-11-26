@@ -9,7 +9,7 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.png", "//":"not required",
+      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someimage.png", "//":"not required",
       "color": "", "//":"not required"
     }
   },

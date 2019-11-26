@@ -18,7 +18,7 @@ end
 local patientId = utils.checkNotNull(params.patientId, "need patientId")
 local productId = utils.checkNotNull(params.productId, "need productId")
 local clientProductId = utils.checkNotNull(params.clientProductId, "need clientProductId")
-local patientInfo = auth.patientInfo(ngx, "https://test-telemed.drclinics.ru/api/auth/person", patientId)
+local patientInfo = auth.patientInfo(ngx, os.getenv("TMP_SERVER_URL").."/api/auth/person", patientId)
 
 local buff = ""
 for k,v in pairs(params) do
@@ -49,5 +49,5 @@ local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s 
 local to = string.format("<%s>",os.getenv("SMTP_TO"))
 smtp.sendMail(ngx, to, subject, message)
 -----
-return ngx.redirect("https://test-telemed.drclinics.ru/msa/api/questions/success.html",301)
+return ngx.redirect(os.getenv("TMP_SERVER_URL").."/msa/api/questions/success.html",301)
 

@@ -1,12 +1,12 @@
 {
-  "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someimage.png",
-  "url": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/questions/sample.html", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}",
-  "successRedirectUrl": "https://test-telemed.drclinics.ru/msa/api/questions/success.html", "//": "url куда редиректит бэк анекты в случае когда всё ок, ответ http 200",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someimage.png",
+  "url": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/questions/sample.html", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}",
+  "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/success.html", "//": "url куда редиректит бэк анекты в случае когда всё ок, ответ http 200",
   "items": [
     {
       "description": "Срок готовности анализов",     "//":"not required",
       "header": "До 3 рабочих дней",                 "//":"not required",
-      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup1/images/someicon.png", "//":"not required"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someicon.png", "//":"not required"
     }
   ]
 }
