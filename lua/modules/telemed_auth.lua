@@ -1,5 +1,4 @@
 local _M = {}
-
 local http = require "resty.http"
 local cjson = require "cjson"
 

@@ -2,7 +2,8 @@
 /.idea/
 .env
 ./logs/*
-./data/files/lab_orders/error.log
-./data/files/questions/error.log
-./data/files/state/error.log
+./files/**
+./data/files/lab_orders/*
+./data/files/questions/*
+./data/files/state/*
 ./curls

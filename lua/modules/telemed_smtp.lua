@@ -1,9 +1,9 @@
 local _M = {}
+local smtp = require("resty.smtp")
 
 -- returtn patientInfo or exception
 function _M.sendMail(ngx, to, subject, message)
 
-    local smtp = require("resty.smtp")
     -- Загружаем библиотеку для работы с SMTP
     local from = string.format("<%s>", os.getenv("SMTP_FROM"))
 

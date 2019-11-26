@@ -1,16 +1,8 @@
 local cjson = require "cjson"
 local auth = require "lua.modules.telemed_auth"
 local smtp = require "lua.modules.telemed_smtp"
+local utils = require "lua.modules.utils"
 
-local function checkNotNull(val, message)
-
-    if not val then
-        ngx.status = 400
-        ngx.print(message)
-        return ngx.exit(400)
-    end
-    return val
-end
 
 ngx.req.read_body()
 
@@ -23,10 +15,10 @@ if err then
     return ngx.exit(400)
 end
 
-local patientId = checkNotNull(params.patientId, "need patientId")
-local productId = checkNotNull(params.productId, "need productId")
-local clientProductId = checkNotNull(params.clientProductId, "need clientProductId")
-local laboratoryOfficeId = checkNotNull(params.laboratoryOfficeId, "need laboratoryOfficeId")
+local patientId = utils.checkNotNull(params.patientId, "need patientId")
+local productId = utils.checkNotNull(params.productId, "need productId")
+local clientProductId = utils.checkNotNull(params.clientProductId, "need clientProductId")
+local laboratoryOfficeId = utils.checkNotNull(params.laboratoryOfficeId, "need laboratoryOfficeId")
 
 local patientInfo = auth.patientInfo(ngx, "https://test-telemed.drclinics.ru/api/auth/person", patientId)
 -----------
