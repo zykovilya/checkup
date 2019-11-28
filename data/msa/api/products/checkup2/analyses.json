@@ -1,7 +1,7 @@
 {
   "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png",
   "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/laboratories.json",
-  "sendLaboratoryEndpoint":"{{TMP_SERVER_URL}}/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}",
+  "sendLaboratoryEndpoint":"{{TMP_SERVER_URL}}/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: patientId=${patientId}, productId=${productId}, clientProductId=${clientProductId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
   "preparationButton": {
     "name": "Что входит в обследование",
     "descriptionContent": {
