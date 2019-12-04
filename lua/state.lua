@@ -33,9 +33,9 @@ if ngx.req.get_method() == "POST" or ngx.req.get_method() == "PUT"  then
 else
     local stateFile = getFileName(dirName, patientId, clientProductId);
     if utils.fileExists(stateFile) then
-        local file = io.open(stateFile, 'r')
-        local body = file:read()
-        ngx.say(body)
+        local file = io.open(stateFile);
+        local body = file:read("*all");
+        ngx.say(body);
         file:close()
     else
         ngx.status = 404
