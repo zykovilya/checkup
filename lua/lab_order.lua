@@ -27,9 +27,14 @@ local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s"
 local to = string.format("<%s>",os.getenv("SMTP_TO"))
 smtp.sendMail(ngx, to, subject, message)
 -------
-local body = ngx.req.get_body_data()
-local file = io.open(string.format("/files/lab_orders/%s", os.clock()), 'w')
-file:write(body)
+
+
+
+local dirName="/files/lab_orders/";
+utils.checkAndCreateDirs(dirName);
+
+local file = io.open(string.format(dirName.."%s", os.clock()), 'w')
+file:write(ngx.req.get_body_data())
 file:close()
 
 return 201

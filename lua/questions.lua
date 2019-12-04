@@ -40,7 +40,10 @@ for k,v in pairs(params) do
 end
 
 ----------------
-local file = io.open(string.format("/files/questions/%s_%s_%s",productId,patientId,clientProductId), 'w')
+local dirName = '/files/questions/';
+utils.checkAndCreateDirs(dirName);
+
+local file = io.open(string.format(dirName.."%s_%s_%s",productId,patientId,clientProductId), 'w')
 file:write(buff)
 file:close()
 -----

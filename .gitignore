@@ -1,9 +1,6 @@
-/pull.log
+pull.log
 /.idea/
 .env
-./logs/*
-./files/**
-./data/files/lab_orders/*
-./data/files/questions/*
-./data/files/state/*
-./curls
+/logs/
+curls
+/data/files/
