@@ -29,10 +29,17 @@ if ngx.req.get_method() == "POST" or ngx.req.get_method() == "PUT"  then
     file:close()
     return 200
 else
-    local file = io.open(getFileName(dirName, patientId,clientProductId), 'r')
-    local body = file:read()
-    ngx.say(body)
-    file:close()
+    local stateFile = getFileName(dirName, patientId, clientProductId);
+    if utils.fileExists(stateFile) then
+        local file = io.open(stateFile, 'r')
+        local body = file:read()
+        ngx.say(body)
+        file:close()
+    else
+        ngx.status = 404
+        ngx.print('state not found')
+        return ngx.exit(404)
+    end
 end
 
 
