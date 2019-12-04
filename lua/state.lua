@@ -22,7 +22,9 @@ utils.checkAndCreateDirs(dirName);
 if ngx.req.get_method() == "POST" or ngx.req.get_method() == "PUT"  then
 
     ngx.req.read_body()
-    local body = cjson.decode(ngx.req.get_body_data())
+    local body = ngx.req.get_body_data()
+    utils.checkNotNull(body, 'Required request body content is missing');
+    body = cjson.decode(body)
 
     local file = io.open(getFileName(dirName, patientId,clientProductId), 'w')
     file:write(cjson.encode(body))
