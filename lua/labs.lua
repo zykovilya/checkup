@@ -32,14 +32,18 @@ end
 file:close();
 
 
-local inviroOffices ={["id"]="invitro",
+local invitro ={["id"]="invitro",
     ["name"]= "Инвитро",
     ["logo"]= server.."/msa/api/labs/images/invitro.png",
     ["color"]= "#0058FF",
     ["offices"]=offices}
 
 
-ngx.say(cjson.encode(inviroOffices))
+local file, err = io.open(dirName .. "kdl.json")
+assert(file and not err);
+local kdl  = cjson.decode(file:read("*all"));
+
+ngx.say(cjson.encode({[1]=invitro,[2]=kdl}))
 return 200
 
 
