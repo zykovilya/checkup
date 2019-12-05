@@ -3,17 +3,17 @@ local auth = require "lua.modules.telemed_auth"
 local utils = require "lua.modules.utils"
 
 
-local patientId  = ngx.var.patientId
+local personId  = ngx.var.personId
 local clientProductId  = ngx.var.clientProductId
 
 
-local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",patientId)
+local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",personId)
 
 ngx.header["firstName"] = patientInfo.firstName
 
 
-local function getFileName(dirName, patientId,clientProductId)
-    return string.format(dirName .. "%s_%s.json",patientId,clientProductId)
+local function getFileName(dirName, personId,clientProductId)
+    return string.format(dirName .. "%s_%s.json",personId,clientProductId)
 end
 
 local dirName = '/files/state/'
@@ -26,12 +26,12 @@ if ngx.req.get_method() == "POST" or ngx.req.get_method() == "PUT"  then
     utils.checkNotNull(body, 'Required request body content is missing');
     body = cjson.decode(body)
 
-    local file = io.open(getFileName(dirName, patientId,clientProductId), 'w')
+    local file = io.open(getFileName(dirName, personId,clientProductId), 'w')
     file:write(cjson.encode(body))
     file:close()
     return 200
 else
-    local stateFile = getFileName(dirName, patientId, clientProductId);
+    local stateFile = getFileName(dirName, personId, clientProductId);
     if utils.fileExists(stateFile) then
         local file = io.open(stateFile);
         local body = file:read("*all");
@@ -39,7 +39,7 @@ else
         file:close()
     else
         ngx.status = 404
-        ngx.print('state not found')
+        ngx.print(utils.getErrorResponse("NOT_FOUND","state not found"))
         return ngx.exit(404)
     end
 end

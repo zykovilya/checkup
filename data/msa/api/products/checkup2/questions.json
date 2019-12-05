@@ -1,6 +1,6 @@
 {
   "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png",
-  "url": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/questions/sample.html", "//": "параметры GET запроса: ?patientId=${patientId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}",
+  "url": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/questions/sample.html", "//": "параметры GET запроса: ?personId=${personId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}",
   "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/success.html", "//": "url куда редиректит бэк анекты в случае когда всё ок, ответ http 200",
   "items": [
     {

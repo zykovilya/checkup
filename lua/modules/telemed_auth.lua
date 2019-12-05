@@ -1,9 +1,11 @@
 local _M = {}
 local http = require "resty.http"
 local cjson = require "cjson"
+local utils = require "lua.modules.utils"
+
 
 -- returtn patientInfo or exception
-function _M.patientInfo(ngx, url, referencePatientId)
+function _M.patientInfo(ngx, url, referencepersonId)
     local httpc = http.new()
     local cookie = ngx.req.get_headers()["cookie"]
     --ngx.header["Cookie"] = cookie
@@ -11,7 +13,7 @@ function _M.patientInfo(ngx, url, referencePatientId)
 
     if (not cookie) then
         ngx.status = 403
-        ngx.print("Forbidden: required Cookie")
+        ngx.print(utils.getErrorResponse("FORBIDDEN","required Cookie"))
         return ngx.exit(403)
     end
 
@@ -27,28 +29,29 @@ function _M.patientInfo(ngx, url, referencePatientId)
         keepalive_pool = 5
     })
     if not res then
-        ngx.print(string.format("{error: \"%s\"}", err))
+        ngx.print(utils.getErrorResponse("ERROR",err))
         ngx.log(ngx.ERR, string.format("Auth failed: %s", err))
         return ngx.exit(500)
     elseif res.status ~= 200 then
         ngx.status = 500
+        local errorMessage;
         if res.body ~= nil and res.body ~= '' then
-            ngx.print(res.body)
+            errorMessage = res.body;
             ngx.log(ngx.ERR, string.format("Auth failed: %s", res.body))
         else
-            ngx.print(string.format("{error: \"%s\"}", err))
+            errorMessage = string.format("{error: \"%s\"}", err)
             ngx.log(ngx.ERR, string.format("Auth failed: %s", err))
         end
         -- res.status
+        ngx.print(utils.getErrorResponse("ERROR",errorMessage))
         return ngx.exit(500)
     end
 
     local patientInfo = cjson.decode(res.body)
 
-    if (referencePatientId ~= nil and patientInfo.id ~= referencePatientId) then
+    if (referencepersonId ~= nil and patientInfo.id ~= referencepersonId) then
         ngx.status = 403
-        local message = string.format("Auth failed: patient is not equals (%s,%s) ", referencePatientId, patientInfo.id);
-        ngx.print(message)
+        ngx.print(utils.getErrorResponse("FORBIDDEN",string.format("Auth failed: patient is not equals (%s,%s) ", referencepersonId, patientInfo.id)))
         ngx.log(ngx.ERR, message)
         return ngx.exit(403)
     end

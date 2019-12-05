@@ -17,6 +17,7 @@ services:
     volumes:
       - ./data/msa:/usr/share/nginx/html/msa
       - ./data/files:/files
+      - ./data/labs:/labs
       - ./lua:/lua:ro
       - ./logs:/usr/local/openresty/nginx/logs
       - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro

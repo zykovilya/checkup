@@ -8,7 +8,7 @@
 <div id="uri"></div>
 
 <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post" >
-    <input type="hidden" name="patientId" />
+    <input type="hidden" name="personId" />
     <input type="hidden" name="productId" />
     <input type="hidden" name="clientProductId" />
 
@@ -57,7 +57,7 @@
     document.getElementById("uri").innerHTML = document.documentURI;
 
     (function() {
-        changeInputByName('patientId');
+        changeInputByName('personId');
         changeInputByName('productId');
         changeInputByName('clientProductId');
     })();
