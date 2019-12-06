@@ -7,5 +7,6 @@
 - QUESTIONS_URL - настройки анкеты для продукта - url на json
 - START_PAGE_URL - настройки первой страницы активного продукта - url на json
 - CONSULTATION_URL - настройки  модуля консультации - url на json
-- APPOINTMENT_DOC_SPECIALITY_ID - id специальность врача
 
+
+ 

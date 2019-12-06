@@ -3,7 +3,7 @@ local cjson = require "cjson"
 
 
 function _M.checkNotNull(val, message)
-    if not val then
+    if  val==nil or val=='' then
         ngx.status = 400
         ngx.print(_M.getErrorResponse("BAD_REQUEST", message));
         return ngx.exit(400)

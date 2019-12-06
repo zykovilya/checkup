@@ -51,7 +51,7 @@ function _M.patientInfo(ngx, url, referencepersonId)
 
     if (referencepersonId ~= nil and patientInfo.id ~= referencepersonId) then
         ngx.status = 403
-        ngx.print(utils.getErrorResponse("FORBIDDEN",string.format("Auth failed: patient is not equals (%s,%s) ", referencepersonId, patientInfo.id)))
+        ngx.print(utils.getErrorResponse("FORBIDDEN",string.format("Auth failed: persons is not equals (%s,%s) ", referencepersonId, patientInfo.id)))
         ngx.log(ngx.ERR, message)
         return ngx.exit(403)
     end
