@@ -1,10 +1,10 @@
 {
-  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic3.png",
   "description": "Результаты ваших анализов будут добавлены в мед.карту",  "//":"not required",
   "items": [
     {
       "description": "Обязательно дождитесь СМС о готовности анализов и только после этого запишитесь на консультацию", "//":"not required",
-      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someicon.png", "//":"not required"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/warnImg.png", "//":"not required"
     }
   ]
 

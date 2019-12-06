@@ -1,5 +1,5 @@
 {
-  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someimage.png",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/HeartCarePhoto.jpg",
   "title": {
     "description": "Программа обследования",
     "header": "Здоровое сердце"
@@ -8,12 +8,12 @@
     {
       "description": "Материал для анализов",
       "header": "Кровь и моча",
-      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someicon.png"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/materialsImg.png"
     },
     {
       "description": "Срок готовности",
       "header": "До 3 рабочих дней",
-      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup1/images/someicon.png"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/dateImg.png"
     }
   ],
   "descriptionButton": {

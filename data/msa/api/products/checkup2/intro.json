@@ -9,7 +9,7 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png", "//":"not required",
+      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide1.png", "//":"not required",
       "color": "", "//":"not required"
     }
   },
