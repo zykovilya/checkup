@@ -1,0 +1,13 @@
+{
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic2.png",
+  "url": "{{TMP_SERVER_URL}}/msa/api/questions/checkup/index.html", "//": "параметры GET запроса: ?personId=${personId}&productId=${productId}&clientProductId=${clientProductId}&token=${JSESSIONID}",
+  "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/success.html", "//": "url куда редиректит бэк анекты в случае когда всё ок, ответ http 200",
+  "items": [
+    {
+      "description": "Срок готовности анализов",     "//":"not required",
+      "header": "До 11 рабочих дней",                 "//":"not required",
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/labImg.png", "//":"not required"
+    }
+  ]
+}
+
