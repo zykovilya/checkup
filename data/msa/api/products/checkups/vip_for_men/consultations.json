@@ -3,7 +3,8 @@
   "description": "Результаты ваших анализов будут добавлены в мед.карту",  "//":"not required",
   "items": [
     {
-      "description": "Обязательно дождитесь СМС о готовности анализов и только после этого запишитесь на консультацию", "//":"not required",
+      "header": "Обязательно дождитесь СМС о готовности анализов и только после этого запишитесь на консультацию",
+      "description": "", "//":"not required",
       "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/warnImg.png", "//":"not required"
     }
   ]
