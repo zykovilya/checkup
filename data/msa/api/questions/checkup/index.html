@@ -12,7 +12,7 @@
   <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post" >
     <input type="hidden" name="personId" />
     <input type="hidden" name="productId" />
-    <input type="hidden" name="clientProductId" />
+    <input type="hidden" name="productOrderId" />
 
     <div class="input-group">
       <div class="title">Ваш рост в сантиметрах </div>
@@ -174,7 +174,7 @@
 	(function() {
 		changeInputByName('personId');
 		changeInputByName('productId');
-		changeInputByName('clientProductId');
+		changeInputByName('productOrderId');
 	})();
 
     function changeInputByName(name) {

@@ -4,7 +4,7 @@ local utils = require "lua.modules.utils"
 
 
 local personId  = ngx.var.personId
-local clientProductId  = ngx.var.clientProductId
+local productOrderId  = ngx.var.productOrderId
 
 
 local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",personId)
@@ -12,8 +12,8 @@ local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth
 ngx.header["firstName"] = patientInfo.firstName
 
 
-local function getFileName(dirName, personId,clientProductId)
-    return string.format(dirName .. "%s_%s.json",personId,clientProductId)
+local function getFileName(dirName, personId,productOrderId)
+    return string.format(dirName .. "%s_%s.json",personId,productOrderId)
 end
 
 local dirName = '/files/state/'
@@ -26,12 +26,12 @@ if ngx.req.get_method() == "POST" or ngx.req.get_method() == "PUT"  then
     utils.checkNotNull(body, 'Required request body content is missing');
     body = cjson.decode(body)
 
-    local file = io.open(getFileName(dirName, personId,clientProductId), 'w')
+    local file = io.open(getFileName(dirName, personId,productOrderId), 'w')
     file:write(cjson.encode(body))
     file:close()
     return 200
 else
-    local stateFile = getFileName(dirName, personId, clientProductId);
+    local stateFile = getFileName(dirName, personId, productOrderId);
     if utils.fileExists(stateFile) then
         local file = io.open(stateFile);
         local body = file:read("*all");

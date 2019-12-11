@@ -22,7 +22,7 @@ local msaServer = os.getenv("MSA_SERVER_URL");
 
 local personId = utils.checkNotNull(params.personId, "need personId")
 local productId = utils.checkNotNull(params.productId, "need productId")
-local clientProductId = utils.checkNotNull(params.clientProductId, "need clientProductId")
+local productOrderId = utils.checkNotNull(params.productOrderId, "need productOrderId")
 local laboratoryOfficeId = utils.checkNotNull(params.laboratoryOfficeId, "need laboratoryOfficeId")
 local oldLaboratoryOfficeId = params.oldLaboratoryOfficeId
 local patientInfo = auth.patientInfo(ngx, tmpServer.."/api/auth/person", personId)
@@ -57,7 +57,7 @@ local bodyPattern = [=[
 local subject ="ЗАПИСЬ В ЛАБОРАТОРИЮ" .. fio
 local message = string.format(bodyPattern, fio, patientInfo.id, patientInfo.email, patientInfo.formattedPhone , patientInfo.username,
                                            office.laboratory, office.id, office.address, office.url,
-                                           clientProductId, productFullName, productId)
+                                           productOrderId, productFullName, productId)
 
 if(oldLaboratoryOfficeId~=nil) then
     message = message .. string.format([=[
