@@ -10,13 +10,9 @@ function _M.patientInfo(ngx, url, referencepersonId)
     local cookie = ngx.req.get_headers()["cookie"]
     --ngx.header["Cookie"] = cookie
 
-
     if (not cookie) then
-        ngx.status = 403
-        ngx.print(utils.getErrorResponse("FORBIDDEN","required Cookie"))
-        return ngx.exit(403)
+        return utils.ngxReturnExit(403, "FORBIDDEN", "required Cookie")
     end
-
 
     local res, err = httpc:request_uri(url, {
         method = "GET",

@@ -12,6 +12,7 @@ services:
       SMTP_PASSWORD: ${SMTP_PASSWORD}
       SMTP_FROM: ${SMTP_FROM}
       TMP_SERVER_URL: ${TMP_SERVER_URL}
+      MSA_SERVER_URL: ${MSA_SERVER_URL}
     ports:
       - 8181:80
     volumes:

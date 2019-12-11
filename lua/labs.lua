@@ -7,7 +7,7 @@ local utils = require "lua.modules.utils"
 
 
 local dirName = '/labs/'
-local server=os.getenv("TMP_SERVER_URL");
+local server=os.getenv("MSA_SERVER_URL");
 
 local file, err = io.open(dirName .. "invitro.json")
 assert(file and not err);

@@ -50,7 +50,26 @@ function _M.split(s, sep)
     return fields
 end
 
+function _M.tablelength(T)
+    local count = 0
+    for _ in pairs(T) do count = count + 1 end
+    return count
+end
 
+function _M.logError(message)
+    ngx.log(ngx.ERR, message)
+end
+
+function _M.log(message)
+    ngx.log(ngx.NOTICE, message)
+end
+
+
+function _M.ngxReturnExit(status, errorCode, errorMessage)
+    ngx.status = status
+    ngx.print(_M.getErrorResponse(errorCode,errorMessage))
+    return ngx.exit(status)
+end
 
 
 return _M
