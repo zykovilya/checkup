@@ -54,9 +54,9 @@ local bodyPattern = [=[
 в рамках заказа(productOrderId=%s) продукта "%s" (productId=%s).
 ]=]
 
-local subject ="ЗАПИСЬ В ЛАБОРАТОРИЮ" .. fio
+local subject ="ЗАПИСЬ В ЛАБОРАТОРИЮ: " .. fio
 local message = string.format(bodyPattern, fio, patientInfo.id, patientInfo.email, patientInfo.formattedPhone , patientInfo.username,
-                                           office.laboratory, office.id, office.address, office.url,
+                                           office.laboratory, laboratoryOfficeId, office.address, office.url,
                                            productOrderId, productFullName, productId)
 
 if(oldLaboratoryOfficeId~=nil) then
@@ -66,7 +66,7 @@ if(oldLaboratoryOfficeId~=nil) then
           офис(id=%s):
              адрес: %s
              ссылка: %s
-    ]=],oldOffice.laboratory, oldOffice.id, oldOffice.address, oldOffice.url)
+    ]=],oldOffice.laboratory, oldLaboratoryOfficeId, oldOffice.address, oldOffice.url)
 end
 
 local to = string.format("<%s>",os.getenv("SMTP_TO"))
