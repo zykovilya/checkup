@@ -6,7 +6,7 @@
     },
     "description": {
       "content": "Нужно сделать анализы это очень важно",
-      "textColor": "#62ff00"
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide1.png", "//":"not required",
@@ -20,7 +20,7 @@
     },
     "description": {
       "content": "Заполните анкету - это данные для врача",
-      "textColor": "#62ff00"
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png", "//":"not required",
@@ -34,7 +34,7 @@
     },
     "description": {
       "content": "Запишитесь на удобное время к специалисту по диагностике, пройдите консультацию и получите карту питания",
-      "textColor": "#62ff00"
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png", "//":"not required",
