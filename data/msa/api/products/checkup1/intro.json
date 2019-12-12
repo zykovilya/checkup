@@ -26,6 +26,20 @@
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png", "//":"not required",
       "color": "#FF00AA", "//":"not required"
     }
+  },
+  {
+    "title": {
+      "content": "3 Запишитесь на консультацию:",
+      "textColor": "#FF00AA"
+    },
+    "description": {
+      "content": "Запишитесь на удобное время к специалисту по диагностике, пройдите консультацию и получите карту питания",
+      "textColor": "#FF00AA"
+    },
+    "background": {
+      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png", "//":"not required",
+      "color": "#FF00AA", "//":"not required"
+    }
   }
 ]
 
