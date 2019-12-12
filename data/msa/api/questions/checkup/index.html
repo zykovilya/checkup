@@ -10,7 +10,7 @@
 <body>
 <div class="container">
   <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post" >
-    <input type="hidden" name="patientId" />
+    <input type="hidden" name="personId" />
     <input type="hidden" name="productId" />
     <input type="hidden" name="productOrderId" />
 
@@ -146,7 +146,7 @@
       <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Редко" type="radio" /><span class="checkmark"></span>Редко</label>
       <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Никогда" type="radio" /><span class="checkmark"></span>Никогда</label>
     </div>
-    <div class="input-group">
+   <!-- <div class="input-group">
       <div class="title">Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев.</div>
       <div class="file-container">
         <div class="form-group">
@@ -159,7 +159,7 @@
           </label>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="submit">
       <input type="submit" class="button" value="Отправить" />
     </div>
@@ -206,7 +206,7 @@
 	}
 
 	(function() {
-		changeInputByName('patientId');
+		changeInputByName('personId');
 		changeInputByName('productId');
 		changeInputByName('productOrderId');
 	})();
