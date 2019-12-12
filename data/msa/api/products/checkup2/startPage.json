@@ -1,5 +1,5 @@
 {
-  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/HeartCarePhoto.jpg",
   "title": {
     "description": "Программа обследования",
     "header": "VIP обследование для мужчин"
