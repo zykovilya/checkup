@@ -2,11 +2,11 @@
   {
     "title": {
       "content": "1. Сделайте анализы",
-      "textColor": "#FF00AA"
+      "textColor": "#FFFFFF"
     },
     "description": {
       "content": "Нужно сделать анализы это очень важно",
-      "textColor": "#FF00AA"
+      "textColor": "#62ff00"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide1.png", "//":"not required",
@@ -15,12 +15,12 @@
   },
   {
     "title": {
-      "content": "2 Заполните анкету",
-      "textColor": "#FF00AA"
+      "content": "2. Заполните анкету",
+      "textColor": "#FFFFFF"
     },
     "description": {
       "content": "Заполните анкету - это данные для врача",
-      "textColor": "#FF00AA"
+      "textColor": "#62ff00"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png", "//":"not required",
@@ -29,12 +29,12 @@
   },
   {
     "title": {
-      "content": "3 Запишитесь на консультацию:",
-      "textColor": "#FF00AA"
+      "content": "3. Запишитесь на консультацию:",
+      "textColor": "#FFFFFF"
     },
     "description": {
       "content": "Запишитесь на удобное время к специалисту по диагностике, пройдите консультацию и получите карту питания",
-      "textColor": "#FF00AA"
+      "textColor": "#62ff00"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png", "//":"not required",
