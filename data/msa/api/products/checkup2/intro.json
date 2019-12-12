@@ -23,7 +23,7 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "", "//":"not required",
+      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png", "//":"not required",
       "color": "#FF00AA", "//":"not required"
     }
   },
@@ -37,7 +37,7 @@
       "textColor": "#FF00AA"
     },
     "background": {
-      "imageUrl": "", "//":"not required",
+      "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png", "//":"not required",
       "color": "#FF00AA", "//":"not required"
     }
   }
