@@ -9,7 +9,7 @@
 			"textColor": "#FFFFFF"
 		},
 		"background": {
-			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide1.png",
+			"imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide1.png",
 			"color": ""
 		}
 	},
@@ -23,7 +23,7 @@
 			"textColor": "#FFFFFF"
 		},
 		"background": {
-			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide2.png",
+			"imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png",
 			"color": ""
 		}
 	},
@@ -37,7 +37,7 @@
 			"textColor": "#FFFFFF"
 		},
 		"background": {
-			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide3.png",
+			"imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png",
 			"color": ""
 		}
 	}
