@@ -275,6 +275,20 @@
                     name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
                     value="Никогда" type="radio"/><span class="checkmark"></span>Никогда</label>
         </div>
+        <!-- <div class="input-group">
+           <div class="title">Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев.</div>
+           <div class="file-container">
+             <div class="form-group">
+               <input type="file" name="Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев." id="file" class="input-file" multiple>
+               <label for="file" class="btn btn-tertiary labelFile">
+                 <div>
+                   <img src="assets/paper-clip.svg" alt="paperClip">
+                 </div>
+                 <span class="text">Загрузить файл</span>
+               </label>
+             </div>
+           </div>
+         </div>-->
         <div class="submit">
             <input type="submit" class="button" value="Отправить"/>
         </div>
@@ -296,7 +310,7 @@
                     x.checked = x.value ? true : false
                 }
                 return x.checked
-            });
+            })
             if (!check) {
                 x.classList.add("warning")
             } else {
@@ -312,7 +326,7 @@
         if (isSomeInputChecked) {
             evt.target.submit()
         }
-    });
+    })
 
 
     function maxLengthCheck(object) {
@@ -324,16 +338,6 @@
         changeInputByName('personId');
         changeInputByName('productId');
         changeInputByName('productOrderId');
-
-        var result = getCookie("personId");
-        if(result){
-            let el = document.getElementsByName("Вес в килограммах")[0];
-            el.value = result;
-
-        }
-
-        setCookie("personId", getURLParameter("personId"), 2);
-
     })();
 
     function changeInputByName(name) {
@@ -350,27 +354,6 @@
             if (sParameterName[0] === sParam) {
                 return sParameterName[1];
             }
-        }
-        return null;
-    }
-
-    function setCookie(name,value,days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-    }
-
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
         }
         return null;
     }
