@@ -327,7 +327,9 @@
 
         var result = getCookie("personId");
         if(result){
-            alert(result)
+            let el = document.getElementsByName("Вес в килограммах")[0];
+            el.value = result;
+
         }
 
         setCookie("personId", getURLParameter("personId"), 2);
