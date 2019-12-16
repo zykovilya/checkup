@@ -24,7 +24,7 @@
 		},
 		"background": {
 			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide2.png",
-			"color": ""
+			"color": "#FF00AA"
 		}
 	},
 	{
@@ -38,7 +38,7 @@
 		},
 		"background": {
 			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide3.png",
-			"color": ""
+			"color": "#FF00AA"
 		}
 	}
 ]
