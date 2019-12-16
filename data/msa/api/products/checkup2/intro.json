@@ -1,12 +1,12 @@
 [
   {
     "title": {
-      "content": "1. Сделайте анализы",
-      "textColor": "#FF00AA"
+      "content": "Всего 3 простых шага. 1. Сделайте анализы",
+      "textColor": "#FFFFFF"
     },
     "description": {
-      "content": "Запишитесь в лабораторию в удобном для вас месте, мы подскажем как подготовьтесь и сдать анализы.",
-      "textColor": "#FF00AA"
+      "content": "Для оценки состояния организма запишитесь в удобную для вас лабораторию и сдайте анализы",
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide1.png", "//":"not required",
@@ -15,26 +15,26 @@
   },
   {
     "title": {
-      "content": "2 Заполните анкету",
-      "textColor": "#FF00AA"
+      "content": "2. Заполните анкету",
+      "textColor": "#FFFFFF"
     },
     "description": {
-      "content": "Расскажите о состоянии здоровья, чтобы врач смог подготовиться к консультации.",
-      "textColor": "#FF00AA"
+      "content": "Анкета поможет врачу получить более полную информацию перед началом консультации",
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide2.png", "//":"not required",
       "color": "#FF00AA", "//":"not required"
     }
   },
-    {
+  {
     "title": {
-      "content": "3 Запишитесь на консультацию:",
-      "textColor": "#FF00AA"
+      "content": "3. Запишитесь на онлайн-консультацию:",
+      "textColor": "#FFFFFF"
     },
     "description": {
-      "content": "Запишитесь на удобное время к специалисту по диагностике, пройдите консультацию и получите карту питания",
-      "textColor": "#FF00AA"
+      "content": "Врач расшифрует результаты анализов и составит рекомендации, подходящие под особенности вашего организма",
+      "textColor": "#3CB371"
     },
     "background": {
       "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/slide3.png", "//":"not required",
