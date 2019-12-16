@@ -1,233 +1,362 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Диетологическая анкета</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Диетологическая анкета</title>
 </head>
 
 <body>
 <div class="container">
-  <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post" >
-    <input type="hidden" name="patientId" />
-    <input type="hidden" name="productId" />
-    <input type="hidden" name="productOrderId" />
+    <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post">
+        <input type="hidden" name="personId"/>
+        <input type="hidden" name="productId"/>
+        <input type="hidden" name="productOrderId"/>
 
-    <div class="input-group custom-validation">
-      <div class="title">Ваш рост в сантиметрах</div>
-      <label><input name="Ваш рост в сантиметрах" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
-    </div>
-
-    <div class="input-group custom-validation">
-      <div class="title">Вес в килограммах</div>
-      <label><input name="Вес в килограммах" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
-    </div>
-
-    <div class="input-group custom-validation">
-      <div class="title">Перечислите жалобы, которые беспокоят вас на текущий момент. Если ничего не беспокоит, ответьте «нет».</div>
-      <label><input name="Перечислите жалобы, которые беспокоят вас на текущий момент. Если ничего не беспокоит, ответьте «нет»." type="text" value="" placeholder="Длинный вариант ответа"/></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какое обычно у вас артериальное давление?</div>
-      <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Повышенное" type="radio" /><span class="checkmark"></span>Повышенное</label>
-      <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Пониженное" type="radio" /><span class="checkmark"></span>Пониженное</label>
-      <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="В пределах нормы" type="radio"/><span class="checkmark"></span>В пределах нормы</label>
-      <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Не знаю" type="radio" /><span class="checkmark"></span>Не знаю</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какие заболевания были у вас диагностированы? (можно поставить несколько галочек)</div>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Язва" type="checkbox" /><span class="checkmark"></span>Язва</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Гастрит" type="checkbox" /><span class="checkmark"></span>Гастрит</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Аллергия" type="checkbox" /><span class="checkmark"></span>Аллергия</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Сердечно-сосудистые заболевания" type="checkbox" /><span class="checkmark"></span>Сердечно-сосудистые заболевания</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Заболевания щитовидной железы" type="checkbox" /><span class="checkmark"></span>Заболевания щитовидной железы</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Заболевания желчного пузыря" type="checkbox" /><span class="checkmark"></span>Заболевания желчного пузыря</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Заболевания почек" type="checkbox" /><span class="checkmark"></span>Заболевания почек</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Заболевания печени" type="checkbox" /><span class="checkmark"></span>Заболевания печени</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Заболевания мочеполовой системы" type="checkbox" /><span class="checkmark"></span>Заболевания мочеполовой системы</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Ревматологические заболевания" type="checkbox" /><span class="checkmark"></span>Ревматологические заболевания</label>
-      <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Отсутствуют" type="checkbox" /><span class="checkmark"></span>Отсутствуют</label>
-      <label><input name="Какие заболевания были у вас диагностированы?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какие операции были проведены?</div>
-      <label><input name="Какие операции были проведены?" type="text" value="" placeholder="Краткий ответ" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какие заболевания вы перенесли в детстве? (можно поставить несколько галочек)</div>
-      <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Корь" type="checkbox" /><span class="checkmark"></span>Корь</label>
-      <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Ветрянка" type="checkbox" /><span class="checkmark"></span>Ветрянка</label>
-      <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Краснуха" type="checkbox" /><span class="checkmark"></span>Краснуха</label>
-      <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Желтуха" type="checkbox" /><span class="checkmark"></span>Желтуха</label>
-      <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Не знаю" type="checkbox" /><span class="checkmark"></span>Не знаю</label>
-      <label><input name="Какие заболевания вы перенесли в детстве?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какие заболевания были диагностированы у ваших родственников? (можно поставить несколько галочек)</div>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Язва" type="checkbox" /><span class="checkmark"></span>Язва</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Гастрит" type="checkbox" /><span class="checkmark"></span>Гастрит</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Аллергия" type="checkbox" /><span class="checkmark"></span>Аллергия</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Сердечно-сосудистые заболевания" type="checkbox" /><span class="checkmark"></span>Сердечно-сосудистые заболевания</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания щитовидной железы" type="checkbox" /><span class="checkmark"></span>Заболевания щитовидной железы</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания желчного пузыря" type="checkbox" /><span class="checkmark"></span>Заболевания желчного пузыря</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания почек" type="checkbox" /><span class="checkmark"></span>Заболевания почек</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания печени" type="checkbox" /><span class="checkmark"></span>Заболевания печени</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания мочеполовой системы" type="checkbox" /><span class="checkmark"></span>Заболевания мочеполовой системы</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Ревматологические заболевания" type="checkbox" /><span class="checkmark"></span>Ревматологические заболевания</label>
-      <label class="checkbox-container"><input name="Какие заболевания были диагностированы у ваших родственников?" value="Не знаю" type="checkbox" /><span class="checkmark"></span>Не знаю</label>
-      <label><input name="Какие заболевания были диагностированы у ваших родственников?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какого питания вы придерживаетесь?</div>
-      <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Ем все" type="checkbox" /><span class="checkmark"></span>Ем все</label>
-      <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Не употребляю мясо" type="checkbox" /><span class="checkmark"></span>Не употребляю мясо</label>
-      <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Не употребляю рыбу" type="checkbox" /><span class="checkmark"></span>Не употребляю рыбу</label>
-      <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Не употребляю молочные продукты" type="checkbox" /><span class="checkmark"></span>Не употребляю молочные продукты</label>
-      <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Не употребляю глютен" type="checkbox" /><span class="checkmark"></span>Не употребляю глютен</label>
-      <label><input name="Какого питания вы придерживаетесь?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Сколько приемов пищи у вас в день?</div>
-      <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="2 основных приема" type="radio" /><span class="checkmark"></span>2 основных приема</label>
-      <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="3 основных приема" type="radio" /><span class="checkmark"></span>3 основных приема</label>
-      <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="5 основных приемов" type="radio" /><span class="checkmark"></span>5 основных приемов</label>
-      <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="Постоянно что-то жую" type="radio" /><span class="checkmark"></span>Постоянно что-то жую</label>
-      <label><input name="Сколько приемов пищи у вас в день?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Страдаете ли вы аллергией, непереносимостью лекарств?</div>
-      <label><input name="Страдаете ли вы аллергией, непереносимостью лекарств?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Какая у вас двигательная активность?</div>
-      <label class="radio-container"><input name="Какая у вас двигательная активность?" value="Я много двигаюсь (Регулярные тренировки от 3х раз в неделю + ежедневная ходьба от 5 км в день)" type="radio" /><span class="checkmark"></span>Я много двигаюсь (Регулярные тренировки от 3х раз в неделю + ежедневная ходьба от 5 км в день)</label>
-      <label class="radio-container"><input name="Какая у вас двигательная активность?" value="Я двигаюсь умеренно (Периодические тренировки + ежедневная ходьба 2-3 км в день)" type="radio" /><span class="checkmark"></span>Я двигаюсь умеренно (Периодические тренировки + ежедневная ходьба 2-3 км в день)</label>
-      <label class="radio-container"><input name="Какая у вас двигательная активность?" value="Физическая активность отсутствует или минимальна" type="radio" /><span class="checkmark"></span>Физическая активность отсутствует или минимальна</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Занимаетесь ли вы спортом? Каким, как часто?</div>
-      <label><input name="Занимаетесь ли вы спортом? Каким, как часто?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Вы курите?</div>
-      <label class="radio-container"><input name="Вы курите?" value="Да" type="radio" /><span class="checkmark"></span>Да</label>
-      <label class="radio-container"><input name="Вы курите?" value="Нет" type="radio" /><span class="checkmark"></span>Нет</label>
-      <label class="radio-container"><input name="Вы курите?" value="Иногда" type="radio" /><span class="checkmark"></span>Иногда</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Как часто вы употребляете алкоголь?</div>
-      <label><input name="Как часто вы употребляете алкоголь?" type="text" value="" placeholder="Ваш вариант ответа (краткий ответ)" /></label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Сколько часов в сутки вы в среднем спите?</div>
-      <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="До 7 часов" type="radio" /><span class="checkmark"></span>До 7 часов</label>
-      <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="7-8 часов" type="radio" /><span class="checkmark"></span>7-8 часов</label>
-      <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="Более 8 часов" type="radio" /><span class="checkmark"></span>Более 8 часов</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Как вы оцениваете качество сна?</div>
-      <label class="radio-container"><input name="Как вы оцениваете качество сна?" value="У меня тревожный сон" type="radio" /><span class="checkmark"></span>У меня тревожный сон</label>
-      <label class="radio-container"><input name="Как вы оцениваете качество сна?" value="Мне сложно заснуть" type="radio" /><span class="checkmark"></span>Мне сложно заснуть</label>
-      <label class="radio-container"><input name="Как вы оцениваете качество сна?" value="В целом я сплю крепко и хорошо высыпаюсь" type="radio" /><span class="checkmark"></span>В целом я сплю крепко и хорошо высыпаюсь</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Насколько вы энергичны?</div>
-      <label class="radio-container"><input name="Насколько вы энергичны?" value="Я очень энергичен/чна" type="radio" /><span class="checkmark"></span>Я очень энергичен / энергична </label>
-      <label class="radio-container"><input name="Насколько вы энергичны?" value="Периодически я не нахожу силы на все дела, но в целом я энергичен" type="radio" /><span class="checkmark"></span>Периодически я не нахожу силы на все дела, но в целом я энергичен</label>
-      <label class="radio-container"><input name="Насколько вы энергичны?" value="Периодически я чувствую себя обессиленным" type="radio" /><span class="checkmark"></span>Периодически я чувствую себя обессиленным</label>
-      <label class="radio-container"><input name="Насколько вы энергичны?" value="Я сплю на ходу" type="radio" /><span class="checkmark"></span>Я сплю на ходу</label>
-    </div>
-    <div class="input-group custom-validation">
-      <div class="title">Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?</div>
-      <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Очень часто " type="radio" /><span class="checkmark"></span>Очень часто</label>
-      <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Часто" type="radio" /><span class="checkmark"></span>Часто</label>
-      <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Время от времени" type="radio" /><span class="checkmark"></span>Время от времени</label>
-      <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Редко" type="radio" /><span class="checkmark"></span>Редко</label>
-      <label class="radio-container"><input name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?" value="Никогда" type="radio" /><span class="checkmark"></span>Никогда</label>
-    </div>
-    <div class="input-group">
-      <div class="title">Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев.</div>
-      <div class="file-container">
-        <div class="form-group">
-          <input type="file" name="Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев." id="file" class="input-file" multiple>
-          <label for="file" class="btn btn-tertiary labelFile">
-            <div>
-              <img src="assets/paper-clip.svg" alt="paperClip">
-            </div>
-            <span class="text">Загрузить файл</span>
-          </label>
+        <div class="input-group custom-validation">
+            <div class="title">Ваш рост в сантиметрах</div>
+            <label><input name="Ваш рост в сантиметрах" type="number" value="" oninput="maxLengthCheck(this)"
+                          placeholder="Ваш ответ"/></label>
         </div>
-      </div>
-    </div>
-    <div class="submit">
-      <input type="submit" class="button" value="Отправить" />
-    </div>
-  </form>
+
+        <div class="input-group custom-validation">
+            <div class="title">Вес в килограммах</div>
+            <label><input name="Вес в килограммах" type="number" value="" oninput="maxLengthCheck(this)"
+                          placeholder="Ваш ответ"/></label>
+        </div>
+
+        <div class="input-group custom-validation">
+            <div class="title">Перечислите жалобы, которые беспокоят вас на текущий момент. Если ничего не беспокоит,
+                ответьте «нет».
+            </div>
+            <label><input
+                    name="Перечислите жалобы, которые беспокоят вас на текущий момент. Если ничего не беспокоит, ответьте «нет»."
+                    type="text" value="" placeholder="Длинный вариант ответа"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какое обычно у вас артериальное давление?</div>
+            <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Повышенное"
+                                                  type="radio"/><span class="checkmark"></span>Повышенное</label>
+            <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Пониженное"
+                                                  type="radio"/><span class="checkmark"></span>Пониженное</label>
+            <label class="radio-container"><input name="Какое обычно у вас артериальное давление?"
+                                                  value="В пределах нормы" type="radio"/><span class="checkmark"></span>В
+                пределах нормы</label>
+            <label class="radio-container"><input name="Какое обычно у вас артериальное давление?" value="Не знаю"
+                                                  type="radio"/><span class="checkmark"></span>Не знаю</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какие заболевания были у вас диагностированы? (можно поставить несколько галочек)</div>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?" value="Язва"
+                                                     type="checkbox"/><span class="checkmark"></span>Язва</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Гастрит" type="checkbox"/><span class="checkmark"></span>Гастрит</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Аллергия" type="checkbox"/><span class="checkmark"></span>Аллергия</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Сердечно-сосудистые заболевания" type="checkbox"/><span
+                    class="checkmark"></span>Сердечно-сосудистые заболевания</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Заболевания щитовидной железы" type="checkbox"/><span
+                    class="checkmark"></span>Заболевания щитовидной железы</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Заболевания желчного пузыря" type="checkbox"/><span
+                    class="checkmark"></span>Заболевания желчного пузыря</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Заболевания почек" type="checkbox"/><span
+                    class="checkmark"></span>Заболевания почек</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Заболевания печени" type="checkbox"/><span
+                    class="checkmark"></span>Заболевания печени</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Заболевания мочеполовой системы" type="checkbox"/><span
+                    class="checkmark"></span>Заболевания мочеполовой системы</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Ревматологические заболевания" type="checkbox"/><span
+                    class="checkmark"></span>Ревматологические заболевания</label>
+            <label class="checkbox-container"><input name="Какие заболевания были у вас диагностированы?"
+                                                     value="Отсутствуют" type="checkbox"/><span
+                    class="checkmark"></span>Отсутствуют</label>
+            <label><input name="Какие заболевания были у вас диагностированы?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какие операции были проведены?</div>
+            <label><input name="Какие операции были проведены?" type="text" value=""
+                          placeholder="Краткий ответ"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какие заболевания вы перенесли в детстве? (можно поставить несколько галочек)</div>
+            <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Корь"
+                                                     type="checkbox"/><span class="checkmark"></span>Корь</label>
+            <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Ветрянка"
+                                                     type="checkbox"/><span class="checkmark"></span>Ветрянка</label>
+            <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Краснуха"
+                                                     type="checkbox"/><span class="checkmark"></span>Краснуха</label>
+            <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Желтуха"
+                                                     type="checkbox"/><span class="checkmark"></span>Желтуха</label>
+            <label class="checkbox-container"><input name="Какие заболевания вы перенесли в детстве?" value="Не знаю"
+                                                     type="checkbox"/><span class="checkmark"></span>Не знаю</label>
+            <label><input name="Какие заболевания вы перенесли в детстве?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какие заболевания были диагностированы у ваших родственников? (можно поставить несколько
+                галочек)
+            </div>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Язва"
+                    type="checkbox"/><span class="checkmark"></span>Язва</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Гастрит"
+                    type="checkbox"/><span class="checkmark"></span>Гастрит</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Аллергия"
+                    type="checkbox"/><span class="checkmark"></span>Аллергия</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?"
+                    value="Сердечно-сосудистые заболевания" type="checkbox"/><span class="checkmark"></span>Сердечно-сосудистые
+                заболевания</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?"
+                    value="Заболевания щитовидной железы" type="checkbox"/><span class="checkmark"></span>Заболевания
+                щитовидной железы</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?"
+                    value="Заболевания желчного пузыря" type="checkbox"/><span class="checkmark"></span>Заболевания
+                желчного пузыря</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания почек"
+                    type="checkbox"/><span class="checkmark"></span>Заболевания почек</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Заболевания печени"
+                    type="checkbox"/><span class="checkmark"></span>Заболевания печени</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?"
+                    value="Заболевания мочеполовой системы" type="checkbox"/><span class="checkmark"></span>Заболевания
+                мочеполовой системы</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?"
+                    value="Ревматологические заболевания" type="checkbox"/><span class="checkmark"></span>Ревматологические
+                заболевания</label>
+            <label class="checkbox-container"><input
+                    name="Какие заболевания были диагностированы у ваших родственников?" value="Не знаю"
+                    type="checkbox"/><span class="checkmark"></span>Не знаю</label>
+            <label><input name="Какие заболевания были диагностированы у ваших родственников?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какого питания вы придерживаетесь?</div>
+            <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?" value="Ем все"
+                                                     type="checkbox"/><span class="checkmark"></span>Ем все</label>
+            <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?"
+                                                     value="Не употребляю мясо" type="checkbox"/><span
+                    class="checkmark"></span>Не употребляю мясо</label>
+            <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?"
+                                                     value="Не употребляю рыбу" type="checkbox"/><span
+                    class="checkmark"></span>Не употребляю рыбу</label>
+            <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?"
+                                                     value="Не употребляю молочные продукты" type="checkbox"/><span
+                    class="checkmark"></span>Не употребляю молочные продукты</label>
+            <label class="checkbox-container"><input name="Какого питания вы придерживаетесь?"
+                                                     value="Не употребляю глютен" type="checkbox"/><span
+                    class="checkmark"></span>Не употребляю глютен</label>
+            <label><input name="Какого питания вы придерживаетесь?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Сколько приемов пищи у вас в день?</div>
+            <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="2 основных приема"
+                                                  type="radio"/><span class="checkmark"></span>2 основных приема</label>
+            <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="3 основных приема"
+                                                  type="radio"/><span class="checkmark"></span>3 основных приема</label>
+            <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="5 основных приемов"
+                                                  type="radio"/><span class="checkmark"></span>5 основных
+                приемов</label>
+            <label class="radio-container"><input name="Сколько приемов пищи у вас в день?" value="Постоянно что-то жую"
+                                                  type="radio"/><span class="checkmark"></span>Постоянно что-то
+                жую</label>
+            <label><input name="Сколько приемов пищи у вас в день?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Страдаете ли вы аллергией, непереносимостью лекарств?</div>
+            <label><input name="Страдаете ли вы аллергией, непереносимостью лекарств?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Какая у вас двигательная активность?</div>
+            <label class="radio-container"><input name="Какая у вас двигательная активность?"
+                                                  value="Я много двигаюсь (Регулярные тренировки от 3х раз в неделю + ежедневная ходьба от 5 км в день)"
+                                                  type="radio"/><span class="checkmark"></span>Я много двигаюсь
+                (Регулярные тренировки от 3х раз в неделю + ежедневная ходьба от 5 км в день)</label>
+            <label class="radio-container"><input name="Какая у вас двигательная активность?"
+                                                  value="Я двигаюсь умеренно (Периодические тренировки + ежедневная ходьба 2-3 км в день)"
+                                                  type="radio"/><span class="checkmark"></span>Я двигаюсь умеренно
+                (Периодические тренировки + ежедневная ходьба 2-3 км в день)</label>
+            <label class="radio-container"><input name="Какая у вас двигательная активность?"
+                                                  value="Физическая активность отсутствует или минимальна"
+                                                  type="radio"/><span class="checkmark"></span>Физическая активность
+                отсутствует или минимальна</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Занимаетесь ли вы спортом? Каким, как часто?</div>
+            <label><input name="Занимаетесь ли вы спортом? Каким, как часто?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Вы курите?</div>
+            <label class="radio-container"><input name="Вы курите?" value="Да" type="radio"/><span
+                    class="checkmark"></span>Да</label>
+            <label class="radio-container"><input name="Вы курите?" value="Нет" type="radio"/><span
+                    class="checkmark"></span>Нет</label>
+            <label class="radio-container"><input name="Вы курите?" value="Иногда" type="radio"/><span
+                    class="checkmark"></span>Иногда</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Как часто вы употребляете алкоголь?</div>
+            <label><input name="Как часто вы употребляете алкоголь?" type="text" value=""
+                          placeholder="Ваш вариант ответа (краткий ответ)"/></label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Сколько часов в сутки вы в среднем спите?</div>
+            <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="До 7 часов"
+                                                  type="radio"/><span class="checkmark"></span>До 7 часов</label>
+            <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="7-8 часов"
+                                                  type="radio"/><span class="checkmark"></span>7-8 часов</label>
+            <label class="radio-container"><input name="Сколько часов в сутки вы в среднем спите?" value="Более 8 часов"
+                                                  type="radio"/><span class="checkmark"></span>Более 8 часов</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Как вы оцениваете качество сна?</div>
+            <label class="radio-container"><input name="Как вы оцениваете качество сна?" value="У меня тревожный сон"
+                                                  type="radio"/><span class="checkmark"></span>У меня тревожный
+                сон</label>
+            <label class="radio-container"><input name="Как вы оцениваете качество сна?" value="Мне сложно заснуть"
+                                                  type="radio"/><span class="checkmark"></span>Мне сложно
+                заснуть</label>
+            <label class="radio-container"><input name="Как вы оцениваете качество сна?"
+                                                  value="В целом я сплю крепко и хорошо высыпаюсь" type="radio"/><span
+                    class="checkmark"></span>В целом я сплю крепко и хорошо высыпаюсь</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Насколько вы энергичны?</div>
+            <label class="radio-container"><input name="Насколько вы энергичны?" value="Я очень энергичен/чна"
+                                                  type="radio"/><span class="checkmark"></span>Я очень энергичен /
+                энергична </label>
+            <label class="radio-container"><input name="Насколько вы энергичны?"
+                                                  value="Периодически я не нахожу силы на все дела, но в целом я энергичен"
+                                                  type="radio"/><span class="checkmark"></span>Периодически я не нахожу
+                силы на все дела, но в целом я энергичен</label>
+            <label class="radio-container"><input name="Насколько вы энергичны?"
+                                                  value="Периодически я чувствую себя обессиленным" type="radio"/><span
+                    class="checkmark"></span>Периодически я чувствую себя обессиленным</label>
+            <label class="radio-container"><input name="Насколько вы энергичны?" value="Я сплю на ходу"
+                                                  type="radio"/><span class="checkmark"></span>Я сплю на ходу</label>
+        </div>
+        <div class="input-group custom-validation">
+            <div class="title">Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6
+                месяцев?
+            </div>
+            <label class="radio-container"><input
+                    name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
+                    value="Очень часто " type="radio"/><span class="checkmark"></span>Очень часто</label>
+            <label class="radio-container"><input
+                    name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
+                    value="Часто" type="radio"/><span class="checkmark"></span>Часто</label>
+            <label class="radio-container"><input
+                    name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
+                    value="Время от времени" type="radio"/><span class="checkmark"></span>Время от времени</label>
+            <label class="radio-container"><input
+                    name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
+                    value="Редко" type="radio"/><span class="checkmark"></span>Редко</label>
+            <label class="radio-container"><input
+                    name="Как часто вы испытывали тревогу, раздражение, нервозность в течение последних 6 месяцев?"
+                    value="Никогда" type="radio"/><span class="checkmark"></span>Никогда</label>
+        </div>
+        <!-- <div class="input-group">
+           <div class="title">Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев.</div>
+           <div class="file-container">
+             <div class="form-group">
+               <input type="file" name="Вы можете приложить результаты обследований, анализы и любую медицинскую информацию о себе, полученную в течение последних 6 месяцев." id="file" class="input-file" multiple>
+               <label for="file" class="btn btn-tertiary labelFile">
+                 <div>
+                   <img src="assets/paper-clip.svg" alt="paperClip">
+                 </div>
+                 <span class="text">Загрузить файл</span>
+               </label>
+             </div>
+           </div>
+         </div>-->
+        <div class="submit">
+            <input type="submit" class="button" value="Отправить"/>
+        </div>
+    </form>
 </div>
 
 <script>
 
-	let requiredCheckBox = document.querySelectorAll('.custom-validation')
-	const form = document.querySelector('.form-horizontal')
-  function testChecked () {
-		requiredCheckBox = Array.from(requiredCheckBox)
-		return requiredCheckBox.map(x => {
-			let input = x.querySelectorAll('label > input')
-			input = Array.from(input)
-			const check = input.some(x => {
-        if (x.type === 'text' || x.type === 'number') {
-					x.checked = x.value ? true : false
+    let requiredCheckBox = document.querySelectorAll('.custom-validation')
+    const form = document.querySelector('.form-horizontal')
+
+    function testChecked() {
+        requiredCheckBox = Array.from(requiredCheckBox)
+        return requiredCheckBox.map(x => {
+            let input = x.querySelectorAll('label > input')
+            input = Array.from(input)
+            const check = input.some(x => {
+                if (x.type === 'text' || x.type === 'number') {
+                    x.checked = x.value ? true : false
+                }
+                return x.checked
+            })
+            if (!check) {
+                x.classList.add("warning")
+            } else {
+                x.classList.remove("warning")
+            }
+            return check
+        })
+    }
+
+    form.addEventListener('submit', evt => {
+        evt.preventDefault()
+        let isSomeInputChecked = testChecked().every(x => x === true)
+        if (isSomeInputChecked) {
+            evt.target.submit()
         }
-				return x.checked
-      })
-      if (!check) {
-				x.classList.add("warning")
-      } else {
-				x.classList.remove("warning")
-      }
-      return check
-		})
-  }
-
-	form.addEventListener('submit', evt => {
-		evt.preventDefault()
-    let isSomeInputChecked = testChecked().every(x => x === true)
-		if (isSomeInputChecked) {
-			evt.target.submit()
-		}
-	})
+    })
 
 
-	function maxLengthCheck(object)
-	{
-		if (object.value.length > 3)
-			object.value = object.value.slice(0, 3)
-	}
+    function maxLengthCheck(object) {
+        if (object.value.length > 3)
+            object.value = object.value.slice(0, 3)
+    }
 
-	(function() {
-		changeInputByName('patientId');
-		changeInputByName('productId');
-		changeInputByName('productOrderId');
-	})();
+    (function () {
+        changeInputByName('personId');
+        changeInputByName('productId');
+        changeInputByName('productOrderId');
+    })();
 
-	function changeInputByName(name) {
-		let el = document.getElementsByName(name)[0];
-		el.value = getURLParameter(name);
-		el.dispatchEvent(new Event("change"));
-	}
+    function changeInputByName(name) {
+        let el = document.getElementsByName(name)[0];
+        el.value = getURLParameter(name);
+        el.dispatchEvent(new Event("change"));
+    }
 
-	function getURLParameter(sParam) {
-		var sPageURL = window.location.search.substring(1);
-		var sURLVariables = sPageURL.split('&');
-		for (var i = 0; i < sURLVariables.length; i++){
-			var sParameterName = sURLVariables[i].split('=');
-			if (sParameterName[0] === sParam){
-				return sParameterName[1];
-			}
-		}
-		return null;
-	}
+    function getURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1];
+            }
+        }
+        return null;
+    }
 
 </script>
 
