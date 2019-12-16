@@ -1,2 +1,6 @@
-/pull.log
+pull.log
 /.idea/
+.env
+/logs/
+curls
+/data/files/

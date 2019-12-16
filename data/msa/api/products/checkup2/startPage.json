@@ -1,5 +1,5 @@
 {
-  "imageUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup2/images/someimage.png",
+  "imageUrl": "{{TMP_SERVER_URL}}/msa/api/products/checkup2/images/someimage.png",
   "title": {
     "description": "Программа обследования",
     "header": "VIP обследование"
@@ -8,17 +8,17 @@
     {
       "description": "Что нужно сдать",
       "header": "Анализ крови и мочи",
-      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup2/images/someicon.png"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/materialsImg.png"
     },
     {
       "description": "Срок готовности",
       "header": "До 11 рабочих дней",
-      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup2/images/someicon.png"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/dateImg.png"
   },
     {
       "description": "Что входит в исследование",
       "header": "47 показателей",
-      "iconUrl": "https://test-telemed.drclinics.ru/msa/api/products/checkup2/images/someicon.png"
+      "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/labImg.png"
     }
   ],
   "descriptionButton": {
