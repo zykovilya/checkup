@@ -1,0 +1,44 @@
+[
+	{
+		"title": {
+			"content": "Всего 3 простых шага \n1. Сдайте анализы",
+			"textColor": "#FFFFFF"
+		},
+		"description": {
+			"content": "Запишитесь в удобную для вас лабораторию и сдайте анализы",
+			"textColor": "#FFFFFF"
+		},
+		"background": {
+			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide1.png",
+			"color": ""
+		}
+	},
+	{
+		"title": {
+			"content": "2. Заполните анкету",
+			"textColor": "#FFFFFF"
+		},
+		"description": {
+			"content": "Анкета поможет врачу получить более полную информацию перед началом консультации",
+			"textColor": "#FFFFFF"
+		},
+		"background": {
+			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide2.png",
+			"color": "#FF00AA"
+		}
+	},
+	{
+		"title": {
+			"content": "3. Запишитесь на онлайн-консультацию",
+			"textColor": "#FFFFFF"
+		},
+		"description": {
+			"content": "Врач расшифрует результаты анализов и составит рекомендации, подходящие под особенности вашего организма.",
+			"textColor": "#FFFFFF"
+		},
+		"background": {
+			"imageUrl": "https://test-telemed.drclinics.ru/msa/api/images/checkup/slide3.png",
+			"color": "#FF00AA"
+		}
+	}
+]
