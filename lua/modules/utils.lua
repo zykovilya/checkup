@@ -37,6 +37,7 @@ function _M.checkAndCreateDirs(path)
     if(not _M.fileExists(path)) then
         os.execute('mkdir -p "' .. path ..'"')
     end
+    return path
 end
 
 
