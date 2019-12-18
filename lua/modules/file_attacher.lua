@@ -12,7 +12,7 @@ function _M.attachFileToPatient(cookie, filePath)
     local max_size = 10000  -- byte
 
 
-    local command = [[curl '%s/api/file/upload' --form 'file=@%s' -H 'Content-Type: multipart/form-data' -H 'Cookie:  JSESSIONID=%s' ]] --;filename=%s
+    local command = [[curl '%s/api/file/upload' --form 'file=@%s' -H 'Content-Type: multipart/form-data' -H 'Cookie: %s' ]] --;filename=%s
     command = string.format(command,url, filePath--[[, name]], cookie)
     utils.log("exec add file: " .. command)
 
@@ -20,7 +20,7 @@ function _M.attachFileToPatient(cookie, filePath)
     utils.log("exec add file result = : " .. stdout)
 
 
-    command = [[curl -X POST '%s/api/patient/document/%s'  -H 'Cookie:  JSESSIONID=%s' ]]
+    command = [[curl -X POST '%s/api/patient/document/%s'  -H 'Cookie: %s' ]]
     utils.log("exec attach: " .. command)
     command = string.format(command,url,stdout, cookie)
 
