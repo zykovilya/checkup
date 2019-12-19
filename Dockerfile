@@ -1,5 +1,5 @@
 FROM openresty/openresty:bionic
-RUN apt-get install iputils-ping -y && iputils-tracepath -y && apt-get install git -y && apt-get install curl -y && apt-get install telnet -y
+RUN apt-get install iputils-ping -y && apt-get install iputils-tracepath -y && apt-get install git -y && apt-get install curl -y && apt-get install telnet -y
 #RUN export DEBIAN_FRONTEND=noninteractive &&  apt-get  -yq install wkhtmltopdf
 RUN rm -rf /var/lib/apt/lists/*
 
