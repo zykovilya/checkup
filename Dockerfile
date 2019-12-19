@@ -1,7 +1,6 @@
 FROM openresty/openresty:bionic
-RUN apt-get install iputils-ping -y
-RUN apt-get install git -y
-RUN apt-get install curl -y
+RUN apt-get install iputils-ping -y && iputils-tracepath -y && apt-get install git -y && apt-get install curl -y && apt-get install telnet -y
+#RUN export DEBIAN_FRONTEND=noninteractive &&  apt-get  -yq install wkhtmltopdf
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-http
