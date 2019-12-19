@@ -5,7 +5,7 @@ services:
     container_name: openresty
     build: .
     restart: always
-    network_mode: "host"
+    #network_mode: "host"
     environment:
       SMTP_SERVER: ${SMTP_SERVER}
       SMTP_USER: ${SMTP_USER}
