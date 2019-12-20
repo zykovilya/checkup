@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Диетологическая анкета</title>
+</head>
+
+<body>
+<div class="container">
+  <form class="form-horizontal" action="{{TMP_SERVER_URL}}/msa/api/products/questions/success.html" method="post" >
+    <input type="hidden" name="personId" />
+    <input type="hidden" name="productId" />
+    <input type="hidden" name="productOrderId" />
+
+    <div class="input-group custom-validation">
+      <div class="title">Какую цель вы ставите перед собой?</div>
+      <div class="question" id="question1" onchange="saveCookie()">
+        <label class="radio-container"><input name="Какую цель вы ставите перед собой?" value="Похудеть" type="radio" /><span class="checkmark"></span>Похудеть</label>
+        <label class="radio-container"><input name="Какую цель вы ставите перед собой?" value="Набрать вес" type="radio" /><span class="checkmark"></span>Набрать вес</label>
+        <label class="radio-container"><input name="Какую цель вы ставите перед собой?" value="Улучшить композицию тела" type="radio"  /><span class="checkmark"></span>Улучшить композицию тела</label>
+        <label class="radio-container"><input name="Какую цель вы ставите перед собой?" value="Научиться правильно питаться" type="radio"  /><span class="checkmark"></span>Научиться правильно питаться</label>
+        <label class="radio-container"><input name="Какую цель вы ставите перед собой?" value="Другое" type="radio" /><span class="checkmark"></span>Другое</label>
+      </div>
+      <div class="question" id="question1-1" onchange="saveCookie()">
+        <label><input name="Какую цель вы ставите перед собой?" type="text" value="" placeholder="Ваш вариант ответа" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какой у вас рост (см)?</div>
+      <div class="question" id="question2" onchange="saveCookie()">
+        <label><input name="Какой у вас рост (см)?" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какой у вас вес (кг) в настоящее время?</div>
+      <div class="question" id="question3" onchange="saveCookie()">
+        <label><input name="Какой у вас вес (кг) в настоящее время?" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какой у вас был максимальный вес?</div>
+      <div class="question" id="question4" onchange="saveCookie()">
+        <label><input name="Какой у вас был максимальный вес?" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какой у вас был минимальный вес?</div>
+      <div class="question" id="question5" onchange="saveCookie()">
+        <label><input name="Какой у вас был минимальный вес?" type="number" value="" oninput="maxLengthCheck(this)" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какое у вас обычное артериальное давление?</div>
+      <div class="question" id="question6" onchange="saveCookie()">
+        <label class="radio-container"><input name="Какое у вас обычное артериальное давление?" value="В пределах нормы" type="radio" /><span class="checkmark"></span>В пределах нормы</label>
+        <label class="radio-container"><input name="Какое у вас обычное артериальное давление?" value="Пониженное" type="radio" /><span class="checkmark"></span>Пониженное</label>
+        <label class="radio-container"><input name="Какое у вас обычное артериальное давление?" value="Повышенное" type="radio" /><span class="checkmark"></span>Повышенное</label>
+        <label class="radio-container"><input name="Какое у вас обычное артериальное давление?" value="Не знаю" type="radio" /><span class="checkmark"></span>Не знаю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">У вас есть хронические заболевания (несколько вариантов ответа)?</div>
+      <div class="question" id="question7" onchange="saveCookie()">
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Сахарный диабет 1 или 2 типа" type="checkbox" /><span class="checkmark"></span>Сахарный диабет 1 или 2 типа</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Язва" type="checkbox" /><span class="checkmark"></span>Язва</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Гастрит" type="checkbox"  /><span class="checkmark"></span>Гастрит</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Аллергия" type="checkbox"  /><span class="checkmark"></span>Аллергия</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Сердечно-сосудистые заболевания" type="checkbox" /><span class="checkmark"></span>Сердечно-сосудистые заболевания</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Заболевания щитовидной железы" type="checkbox" /><span class="checkmark"></span>Заболевания щитовидной железы</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Заболевания желчного пузыря" type="checkbox" /><span class="checkmark"></span>Заболевания желчного пузыря</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Заболевания почек" type="checkbox" /><span class="checkmark"></span>Заболевания почек</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Заболевания печени" type="checkbox" /><span class="checkmark"></span>Заболевания печени</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Отсутствуют" type="checkbox" /><span class="checkmark"></span>Отсутствуют</label>
+        <label class="checkbox-container"><input name="У вас есть хронические заболевания?" value="Другое" type="checkbox"  /><span class="checkmark"></span>Другое</label>
+      </div>
+      <div class="question" id="question7-1" onchange="saveCookie()">
+        <label><input name="У вас есть хронические заболевания?" type="text" value="" placeholder="Ваш вариант ответа" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка (несколько вариантов ответа)?</div>
+      <div class="question" id="question8" onchange="saveCookie()">
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Сахарный диабет 1 или 2 типа" type="checkbox" /><span class="checkmark"></span>Сахарный диабет 1 или 2 типа</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Язва" type="checkbox" /><span class="checkmark"></span>Язва</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Гастрит" type="checkbox" /><span class="checkmark"></span>Гастрит</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Аллергия" type="checkbox" /><span class="checkmark"></span>Аллергия</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Сердечно-сосудистые заболевания" type="checkbox" /><span class="checkmark"></span>Сердечно-сосудистые заболевания</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Заболевания щитовидной железы" type="checkbox" /><span class="checkmark"></span>Заболевания щитовидной железы</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Заболевания желчного пузыря" type="checkbox" /><span class="checkmark"></span>Заболевания желчного пузыря</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Заболевания почек" type="checkbox" /><span class="checkmark"></span>Заболевания почек</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Заболевания печени" type="checkbox" /><span class="checkmark"></span>Заболевания печени</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Отсутствуют" type="checkbox" /><span class="checkmark"></span>Отсутствуют</label>
+        <label class="checkbox-container"><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" value="Другое" type="checkbox" /><span class="checkmark"></span>Другое</label>
+      </div>
+      <div class="question" id="question8-1" onchange="saveCookie()">
+        <label><input name="Диагностировались ли какие-либо хронические заболевания у ваших родственников: мать/отец, бабушка/дедушка?" type="text" value="" placeholder="Ваш вариант ответа" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Какие жалобы на здоровье у вас есть на текущий момент?</div>
+      <div class="question" id="question9" onchange="saveCookie()">
+        <label><input name="Какие жалобы на здоровье у вас есть на текущий момент?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Переносили ли вы какие-либо операции?</div>
+      <div class="question" id="question10" onchange="saveCookie()">
+        <label><input name="Переносили ли вы какие-либо операции?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Принимаете ли вы какие-то лекарственные препараты или биологически активные добавки?</div>
+      <div class="question" id="question11" onchange="saveCookie()">
+        <label><input name="Принимаете ли вы какие-то лекарственные препараты или биологически активные добавки?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Сколько у вас основных приёмов пищи в день?</div>
+      <div class="question" id="question12" onchange="saveCookie()">
+        <label class="radio-container"><input name="Сколько у вас основных приёмов пищи в день?" value="1 раз в день" type="radio" /><span class="checkmark"></span>1 раз в день</label>
+        <label class="radio-container"><input name="Сколько у вас основных приёмов пищи в день?" value="2 раза в день" type="radio" /><span class="checkmark"></span>2 раза в день</label>
+        <label class="radio-container"><input name="Сколько у вас основных приёмов пищи в день?" value="3 раза в день" type="radio" /><span class="checkmark"></span>3 раза в день</label>
+        <label class="radio-container"><input name="Сколько у вас основных приёмов пищи в день?" value="4 раза в день" type="radio" /><span class="checkmark"></span>4 раза в день</label>
+        <label class="radio-container"><input name="Сколько у вас основных приёмов пищи в день?" value="Более 4 раз в день" type="radio" /><span class="checkmark"></span>Более 4 раз в день</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Сколько раз вы перекусываете?</div>
+      <div class="question" id="question13" onchange="saveCookie()">
+        <label class="radio-container"><input name="Сколько раз вы перекусываете?" value="1 раз в день" type="radio" /><span class="checkmark"></span>1 раз в день</label>
+        <label class="radio-container"><input name="Сколько раз вы перекусываете?" value="2–3 раза в день" type="radio" /><span class="checkmark"></span>2–3 раза в день</label>
+        <label class="radio-container"><input name="Сколько раз вы перекусываете?" value="Постоянно что-то жую" type="radio" /><span class="checkmark"></span>Постоянно что-то жую</label>
+        <label class="radio-container"><input name="Сколько раз вы перекусываете?" value="Не перекусываю" type="radio" /><span class="checkmark"></span>Не перекусываю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Где вы чаще всего завтракаете?</div>
+      <div class="question" id="question14" onchange="saveCookie()">
+        <label class="radio-container"><input name="Где вы чаще всего завтракаете?" value="Дома (домашняя еда)" type="radio" /><span class="checkmark"></span>Дома (домашняя еда)</label>
+        <label class="radio-container"><input name="Где вы чаще всего завтракаете?" value="В кафе, ресторане или столовой" type="radio" /><span class="checkmark"></span>В кафе, ресторане или столовой</label>
+        <label class="radio-container"><input name="Где вы чаще всего завтракаете?" value="Не завтракаю" type="radio" /><span class="checkmark"></span>Не завтракаю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Где вы чаще всего обедаете?</div>
+      <div class="question" id="question15" onchange="saveCookie()">
+        <label class="radio-container"><input name="Где вы чаще всего обедаете?" value="Дома (домашняя еда)" type="radio" /><span class="checkmark"></span>Дома (домашняя еда)</label>
+        <label class="radio-container"><input name="Где вы чаще всего обедаете?" value="В кафе, ресторане или столовой" type="radio"/><span class="checkmark"></span>В кафе, ресторане или столовой</label>
+        <label class="radio-container"><input name="Где вы чаще всего обедаете?" value="Не обедаю" type="radio" /><span class="checkmark"></span>Не обедаю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Где вы чаще всего ужинаете?</div>
+      <div class="question" id="question16" onchange="saveCookie()">
+        <label class="radio-container"><input name="Где вы чаще всего ужинаете?" value="Дома (домашняя еда)" type="radio" /><span class="checkmark"></span>Дома (домашняя еда)</label>
+        <label class="radio-container"><input name="Где вы чаще всего ужинаете?" value="В кафе, ресторане или столовой" type="radio" /><span class="checkmark"></span>В кафе, ресторане или столовой</label>
+        <label class="radio-container"><input name="Где вы чаще всего ужинаете?" value="Не ужинаю" type="radio" /><span class="checkmark"></span>Не ужинаю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Придерживаетесь ли вы какого-то определённого стиля питания (несколько вариантов ответа)?</div>
+      <div class="question" id="question17" onchange="saveCookie()">
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Вегетарианство" type="checkbox" /><span class="checkmark"></span>Вегетарианство</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Веганство" type="checkbox" /><span class="checkmark"></span>Веганство</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Гипоаллергенное" type="checkbox"  /><span class="checkmark"></span>Гипоаллергенное</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Безлактозное (не ем молочные продукты)" type="checkbox"  /><span class="checkmark"></span>Безлактозное (не ем молочные продукты)</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Безглютеновое (не ем пшеницу, мучные изделия и другие продукты, содержащие глютен)" type="checkbox"  /><span class="checkmark"></span>Безглютеновое (не ем пшеницу, мучные изделия и другие продукты, содержащие глютен)</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Не придерживаюсь" type="checkbox" /><span class="checkmark"></span>Не придерживаюсь</label>
+        <label class="checkbox-container"><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" value="Другое" type="checkbox" /><span class="checkmark"></span>Другое</label>
+      </div>
+      <div class="question" id="question17-1" onchange="saveCookie()">
+        <label><input name="Придерживаетесь ли вы какого-то определённого стиля питания?" type="text" value="" placeholder="Ваш вариант ответа" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Расскажите о своих трёх любимых блюдах/продуктах.</div>
+      <div class="question" id="question18" onchange="saveCookie()">
+        <label><input name="Расскажите о своих трёх любимых блюдах/продуктах." type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Расскажите о своих трёх нелюбимых блюдах/продуктах.</div>
+      <div class="question" id="question19" onchange="saveCookie()">
+        <label><input name="Расскажите о своих трёх нелюбимых блюдах/продуктах." type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Замечали ли вы дискомфорт (вздутие живота, отрыжку, боли в желудке/кишечнике) после употребления каких-либо продуктов?</div>
+      <div class="question" id="question20" onchange="saveCookie()">
+        <label><input name="Замечали ли вы дискомфорт (вздутие живота, отрыжку, боли в желудке/кишечнике) после употребления каких-либо продуктов?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Курите ли вы?</div>
+      <div class="question" id="question21" onchange="saveCookie()">
+        <label class="radio-container"><input name="Курите ли вы?" value="Больше 1 пачки сигарет в день" type="radio" /><span class="checkmark"></span>Больше 1 пачки сигарет в день</label>
+        <label class="radio-container"><input name="Курите ли вы?" value="Примерно 1 пачку сигарет в день" type="radio" /><span class="checkmark"></span>Примерно 1 пачку сигарет в день</label>
+        <label class="radio-container"><input name="Курите ли вы?" value="Половину пачки сигарет в день" type="radio" /><span class="checkmark"></span>Половину пачки сигарет в день</label>
+        <label class="radio-container"><input name="Курите ли вы?" value="1–3 сигареты в день" type="radio" /><span class="checkmark"></span>1–3 сигареты в день</label>
+        <label class="radio-container"><input name="Курите ли вы?" value="Курю редко" type="radio" /><span class="checkmark"></span>Курю редко</label>
+        <label class="radio-container"><input name="Курите ли вы?" value="Не курю" type="radio" /><span class="checkmark"></span>Не курю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Употребляете ли вы алкогольные напитки?</div>
+      <div class="question" id="question22" onchange="saveCookie()">
+        <label class="radio-container"><input name="Употребляете ли вы алкогольные напитки?" value="Ежедневно" type="radio" /><span class="checkmark"></span>Ежедневно</label>
+        <label class="radio-container"><input name="Употребляете ли вы алкогольные напитки?" value="На выходных" type="radio" /><span class="checkmark"></span>На выходных</label>
+        <label class="radio-container"><input name="Употребляете ли вы алкогольные напитки?" value="По праздникам" type="radio" /><span class="checkmark"></span>По праздникам</label>
+        <label class="radio-container"><input name="Употребляете ли вы алкогольные напитки?" value="Не употребляю" type="radio" /><span class="checkmark"></span>Не употребляю</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Во сколько вы обычно ложитесь спать?</div>
+      <div class="question" id="question23" onchange="saveCookie()">
+        <label><input name="Во сколько вы обычно ложитесь спать?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Сколько часов вы обычно спите?</div>
+      <div class="question" id="question24" onchange="saveCookie()">
+        <label class="radio-container"><input name="Сколько часов вы обычно спите?" value="Менее 7 часов" type="radio" onchange="saveCookie()" /><span class="checkmark"></span>Менее 7 часов</label>
+        <label class="radio-container"><input name="Сколько часов вы обычно спите?" value="7–8 часов" type="radio" onchange="saveCookie()" /><span class="checkmark"></span>7–8 часов</label>
+        <label class="radio-container"><input name="Сколько часов вы обычно спите?" value="Более 8 часов" type="radio" onchange="saveCookie()"/><span class="checkmark"></span>Более 8 часов</label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Занимаетесь ли вы спортом? Каким? Сколько раз в неделю?</div>
+      <div class="question" id="question25" onchange="saveCookie()">
+        <label><input name="Занимаетесь ли вы спортом? Каким? Сколько раз в неделю?" type="text" value="" placeholder="Ваш ответ" /></label>
+      </div>
+    </div>
+
+    <div class="input-group custom-validation">
+      <div class="title">Как вы чаще всего добираетесь до работы?</div>
+      <div class="question" id="question26" onchange="saveCookie()">
+        <label class="radio-container"><input name="Как вы чаще всего добираетесь до работы?" value="На общественном транспорте" type="radio" /><span class="checkmark"></span>На общественном транспорте</label>
+        <label class="radio-container"><input name="Как вы чаще всего добираетесь до работы?" value="На автомобиле" type="radio" /><span class="checkmark"></span>На автомобиле</label>
+        <label class="radio-container"><input name="Как вы чаще всего добираетесь до работы?" value="Пешком" type="radio" /><span class="checkmark"></span>Пешком</label>
+        <label class="radio-container"><input name="Как вы чаще всего добираетесь до работы?" value="Работаю дома" type="radio" /><span class="checkmark"></span>Работаю дома</label>
+      </div>
+    </div>
+
+    <div class="submit">
+      <input type="submit" class="button" value="Отправить" />
+    </div>
+  </form>
+</div>
+
+<script>
+
+	var productOrderCookieId = getURLParameter("productOrderId")
+
+	function saveCookie () {
+    let productOrderList = getURLParameterCookie(productOrderCookieId)
+    productOrderList = productOrderList ? JSON.parse(productOrderList) : {}
+    const value = event.target.value
+    const currentTargetId = event.currentTarget.id
+    const targetType = event.target.type
+		let profileList = Object.assign({}, productOrderList)
+		if (profileList[currentTargetId] && profileList[currentTargetId].length) {
+			if (targetType !== 'checkbox') {
+				profileList[currentTargetId] = [value]
+      } else {
+				if (profileList[currentTargetId].includes(value)) {
+           profileList[currentTargetId] = profileList[currentTargetId].filter(v => v !== value)
+          } else {
+           profileList[currentTargetId] = [value, ...profileList[currentTargetId]]
+          }
+      }
+    } else {
+			profileList[currentTargetId] = [value]
+    }
+		var stringifyProfile = JSON.stringify(profileList)
+		document.cookie = `${productOrderCookieId}=${stringifyProfile}; max-age=86400`
+  }
+
+	function getURLParameterCookie(name) {
+		if (name) {
+			let matches = document.cookie.match(new RegExp(
+				"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+			));
+			return matches ? matches[1] : undefined;
+    }
+		return undefined
+	}
+
+
+  function getCookie () {
+		let productOrderList = getURLParameterCookie(productOrderCookieId)
+		let questions = document.querySelectorAll('.question')
+		questions = Array.from(questions)
+		if (productOrderList) {
+			productOrderList = JSON.parse(productOrderList)
+			questions.forEach(question => {
+				let questionId = question.id
+				let inputList = question.querySelectorAll('input')
+				inputList = Array.from(inputList)
+				inputList.forEach(input => {
+					if (productOrderList[questionId] && productOrderList[questionId].length) {
+						if ((input.type === 'checkbox' || input.type === 'radio') && productOrderList[questionId].includes(input.value)) {
+							input.checked = true
+						} else if (input.type === 'text' || input.type === 'number') {
+							input.value = productOrderList[questionId][0]
+						}
+					}
+				})
+			})
+		}
+  }
+
+  getCookie()
+
+	let requiredInput = document.querySelectorAll('.custom-validation')
+	const form = document.querySelector('.form-horizontal')
+
+  function testChecked () {
+		requiredInput = Array.from(requiredInput)
+		return requiredInput.map(x => {
+			let input = x.querySelectorAll('label > input')
+			input = Array.from(input)
+			const check = input.some(x => {
+        if (x.type === 'text' || x.type === 'number') {
+					x.checked = x.value ? true : false
+        }
+				return x.checked
+      })
+      if (!check) {
+				x.classList.add("warning")
+      } else {
+				x.classList.remove("warning")
+      }
+      return check
+		})
+  }
+
+	form.addEventListener('submit', evt => {
+		evt.preventDefault()
+    let isSomeInputChecked = testChecked().every(x => x === true)
+		if (isSomeInputChecked) {
+			evt.target.submit()
+		}
+	})
+
+
+	function maxLengthCheck(object)
+	{
+		if (object.value.length > 3)
+			object.value = object.value.slice(0, 3)
+	}
+
+	(function() {
+		changeInputByName('personId');
+		changeInputByName('productId');
+		changeInputByName('productOrderId');
+	})();
+
+	function changeInputByName(name) {
+		let el = document.getElementsByName(name)[0];
+		el.value = getURLParameter(name);
+		el.dispatchEvent(new Event("change"));
+	}
+
+	function getURLParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++){
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] === sParam){
+				return sParameterName[1];
+			}
+		}
+		return null;
+	}
+
+</script>
+
+</body>
+</html>
