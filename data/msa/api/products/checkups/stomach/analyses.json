@@ -1,0 +1,14 @@
+{
+    "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic1.png",
+    "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/labs",
+    "sendLaboratoryEndpoint": "{{TMP_SERVER_URL}}/msa/api/analyses/order",
+    "complexName": "Желудок (гастрит и язвенная болезнь)",
+    "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: personId=${personId}, productId=${productId}, productOrderId=${productOrderId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
+    "preparationButton": {
+        "name": "Как подготовиться к сдаче анализов",
+        "descriptionContent": {
+            "title": "Как подготовиться к сдаче анализов",
+            "blocks": []
+        }
+    }
+}
