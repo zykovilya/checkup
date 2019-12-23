@@ -1,0 +1,13 @@
+{
+    "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/diet/pic2.png",
+    "url": "{{TMP_SERVER_URL}}/msa/api/questions/dietology/index.html",
+    "//": "параметры GET запроса: ?personId=${personId}&productId=${productId}&productOrderId=${productOrderId}",
+    "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/dietology/success.html",
+    "items": [
+        {
+            "description": "Срок готовности анализов",
+            "header": "До 7 рабочих дней",
+            "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/diet/icons/dateImg.png"
+        }
+    ]
+}

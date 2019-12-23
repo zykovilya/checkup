@@ -1,0 +1,44 @@
+[
+    {
+        "title": {
+            "content": "Всего 3 простых шага \n1. Сдайте анализы",
+            "textColor": "#FFFFFF"
+        },
+        "description": {
+            "content": "Для оценки состояния организма запишитесь в удобную для вас лабораторию и сдайте анализы",
+            "textColor": "#FFFFFF"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/cosm/slide1.png",
+            "color": ""
+        }
+    },
+    {
+        "title": {
+            "content": "2. Заполните анкету",
+            "textColor": "#FFFFFF"
+        },
+        "description": {
+            "content": "Анкета поможет врачу получить более полную информацию перед началом консультации",
+            "textColor": "#FFFFFF"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/cosm/slide2.png",
+            "color": ""
+        }
+    },
+    {
+        "title": {
+            "content": "3. Запишитесь на онлайн-консультацию",
+            "textColor": "#FFFFFF"
+        },
+        "description": {
+            "content": "Врач расшифрует результаты анализов и составит рекомендации, подходящие под особенности вашего организма.",
+            "textColor": "#FFFFFF"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/cosm/slide3.png",
+            "color": ""
+        }
+    }
+]
