@@ -15,6 +15,7 @@ services:
       SMTP_FROM: ${SMTP_FROM}
       TMP_SERVER_URL: ${TMP_SERVER_URL}
       MSA_SERVER_URL: ${MSA_SERVER_URL}
+      TMP_SERVER_EXTERNAL_URL: ${TMP_SERVER_EXTERNAL_URL}
     ports:
       - 8181:80
     volumes:

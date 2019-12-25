@@ -1,0 +1,240 @@
+@font-face{
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-SemiBold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+.warning {
+    outline: 1px solid #ff6100;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #50516B;
+}
+.container {
+    min-width: 375px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 34px 15px;
+    overflow-x: hidden;
+}
+.title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+input, textarea {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+textarea {
+    margin-top: 5px;
+    padding: 5px 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    outline: none;
+    -moz-appearance: none;
+    overflow: auto;
+    resize: none;
+}
+textarea:focus {
+    border-color: #50516B;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+}
+.input-group label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radio-container input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio-container .checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid #838B98;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.radio-container .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff6100;
+}
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkbox-container .checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border: 1px solid #838B98;
+}
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #ffffff;
+}
+.checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #ff6100;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+input[type=text] {
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #838B98;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 0 10px 0;
+}
+input[type=number] {
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #838B98;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 0 10px 0;
+}
+.labelFile .text {
+    position: absolute;
+    top: 3px;
+    left: 30px;
+}
+.file-container .btn-tertiary{
+    display: block;
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: #838B98;
+}
+.file-container .input-file{
+    width:.1px;
+    height:.1px;
+    opacity:0;
+    overflow:hidden;
+    position:absolute;
+    z-index:-1
+}
+.file-container .input-file + .labelFile{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+}
+input[type=submit]{
+    width: 100%;
+    height: 50px;
+    outline: 0;
+    border: 0;
+    border-radius: 25px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #ff6100;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}

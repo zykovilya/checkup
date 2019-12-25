@@ -63,7 +63,7 @@ local file = io.open(filePath, 'w')
 file:write(csv)
 file:close()
 ----------------
-local attachId= attacher.attachFileToPatient(ngx.req.get_headers()["cookie"],filePath)
+local attachId= attacher.attachFileToPatient(tmpServer, ngx.req.get_headers()["cookie"],filePath)
 if(attachId~=nil and attachId~="") then
     utils.log("WITH ORDER "..productOrderId .. " [ATTACH_ID]= ".. cjson.encode(attachId))
 else
@@ -74,5 +74,5 @@ else
     smtp.sendMail(ngx, to, subject, message)
 end
 ----------------
-return ngx.redirect(os.getenv("TMP_SERVER_URL").."/msa/api/questions/success.html",301)
+return ngx.redirect(os.getenv("TMP_SERVER_EXTERNAL_URL").."/msa/api/questions/success.html",301)
 
