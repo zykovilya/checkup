@@ -74,5 +74,5 @@ else
     smtp.sendMail(ngx, to, subject, message)
 end
 ----------------
-return ngx.redirect(os.getenv("TMP_SERVER_URL").."/msa/api/questions/success.html",301)
+return ngx.redirect(os.getenv("TMP_SERVER_EXTERNAL_URL").."/msa/api/questions/success.html",301)
 
