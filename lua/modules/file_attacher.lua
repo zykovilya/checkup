@@ -3,10 +3,7 @@ local utils = require "lua.modules.utils"
 local shell = require "resty.shell"
 
 
-function _M.attachFileToPatient(cookie, filePath)
-
-    local url ="https://test-telemed.drclinics.ru"
-
+function _M.attachFileToPatient(url, cookie, filePath)
     local stdin = ""
     local timeout = 2000  -- ms
     local max_size = 10000  -- byte
