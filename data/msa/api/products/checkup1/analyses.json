@@ -2,6 +2,7 @@
   "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic1.png",
   "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/labs",
   "sendLaboratoryEndpoint":"{{TMP_SERVER_URL}}/msa/api/analyses/order", "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: personId=${personId}, productId=${productId}, productOrderId=${productOrderId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
+  "complexName":"Диагностическая панель 1", "//":"not required",
   "preparationButton": {
     "name": "Что входит в обследование",
     "descriptionContent": {
