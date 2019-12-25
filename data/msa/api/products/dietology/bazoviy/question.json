@@ -2,7 +2,7 @@
     "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/diet/pic2.png",
     "url": "{{TMP_SERVER_URL}}/msa/api/questions/dietology/index.html",
     "//": "параметры GET запроса: ?personId=${personId}&productId=${productId}&productOrderId=${productOrderId}",
-    "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/dietology/success.html",
+    "successRedirectUrl": "{{TMP_SERVER_URL}}/msa/api/questions/success.html",
     "items": [
         {
             "description": "Срок готовности анализов",

@@ -42,6 +42,7 @@ local invitro ={["id"]="invitro",
 local file, err = io.open(dirName .. "kdl.json")
 assert(file and not err);
 local kdl  = cjson.decode(file:read("*all"));
+kdl.logo = server .. "/msa/api/labs/images/kdl.png"
 
 ngx.say(cjson.encode({[1]=invitro,[2]=kdl}))
 return 200
