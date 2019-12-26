@@ -61,7 +61,7 @@ if complexName == nil then
     end
     if analysesUrl ~= nil then
         -- todo разобраться с путями
-        analysesUrl = string.gsub(analysesUrl, tmpExternalServer, tmpServer)
+        analysesUrl = string.gsub(analysesUrl, tmpExternalServer, msaServer)
         local json = productJsons.getJson(analysesUrl)
         if json ~= nul then
             complexName = json.complexName
