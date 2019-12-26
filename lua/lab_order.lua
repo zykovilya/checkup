@@ -56,6 +56,7 @@ if complexName == nil then
         end
     end
     if analysesUrl ~= nil then
+        -- todo разобраться с путями
         analysesUrl = string.gsub(productFullName, tmpExternalServer, tmpServer)
         local json = productJsons.getJson(analysesUrl)
         if json ~= nul then
