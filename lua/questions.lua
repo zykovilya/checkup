@@ -63,7 +63,7 @@ local file = io.open(filePath, 'w')
 file:write(csv)
 file:close()
 ----------------
-local attachId= attacher.attachFileToPatient(tmpServer, ngx.req.get_headers()["cookie"],filePath, "QUESTIONNAIRE")
+local attachId= attacher.attachFileToPatient(tmpServer, ngx.req.get_headers()["cookie"],filePath, "LAB_RESULT")
 if(attachId~=nil and attachId~="") then
     utils.log("WITH ORDER "..productOrderId .. " [ATTACH_ID]= ".. cjson.encode(attachId))
 else
