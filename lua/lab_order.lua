@@ -49,9 +49,13 @@ if complexName == nil then
     local analysesUrl
     if productInfo ~= nil then
         productFullName = productInfo["fullName"]
-        for key, val in pairs(productInfo.additionalAttributes) do
-            if val.name == 'ANALYSES_URL' then
-               analysesUrl = val.value
+        for key, val in pairs(productInfo.conditions) do
+            if val.additionalAttributes ~= nil  then
+                 for key, val in pairs(val.additionalAttributes) do
+                       if val.name == 'ANALYSES_URL' and analysesUrl == nil then
+                                      analysesUrl = val.value
+                       end
+                 end
             end
         end
     end
