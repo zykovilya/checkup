@@ -51,9 +51,9 @@ if complexName == nil then
         productFullName = productInfo["fullName"]
         for key, val in pairs(productInfo.conditions) do
             if val.additionalAttributes ~= nil  then
-                 for key, val in pairs(val.additionalAttributes) do
-                       if val.name == 'ANALYSES_URL' and analysesUrl == nil then
-                                      analysesUrl = val.value
+                 for k, v in pairs(val.additionalAttributes) do
+                       if v.name == 'ANALYSES_URL' and analysesUrl == nil then
+                                      analysesUrl = v.value
                        end
                  end
             end
@@ -61,7 +61,7 @@ if complexName == nil then
     end
     if analysesUrl ~= nil then
         -- todo разобраться с путями
-        analysesUrl = string.gsub(productFullName, tmpExternalServer, tmpServer)
+        analysesUrl = string.gsub(analysesUrl, tmpExternalServer, tmpServer)
         local json = productJsons.getJson(analysesUrl)
         if json ~= nul then
             complexName = json.complexName
