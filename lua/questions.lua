@@ -48,20 +48,45 @@ local productInfo = products.getProductInfo(tmpServer, productId)
 local productFullName = ""
 if productInfo ~= nil then
     productFullName = productInfo["fullName"]
-end
-
-local csv = '"Анкета(заказ '.. productOrderId .. ') ' .. fio .. ' по продукту ' .. productFullName .. '"\n'
-for k,v in pairs(body) do
-    csv = csv .. '"' .. k .. '","' .. v ..'"\n'
+else
+    productFullName = productId
 end
 
 ----------------
+
 if productFullName ~= nil then  productFullName = string.gsub(productFullName, " ", "_") end
 local dirName = utils.checkAndCreateDirs('/files/questions/');
-local filePath = string.format(dirName.."анкета_%s_%s.csv",productFullName, productOrderId);
-local file = io.open(filePath, 'w')
-file:write(csv)
-file:close()
+local filePath = string.format(dirName.."анкета_%s_%s.xlsx",productFullName, productOrderId);
+
+-------
+local Workbook = require "xlsxwriter.workbook"
+
+local workbook  = Workbook:new(filePath)
+local worksheet = workbook:add_worksheet()
+
+-- Widen the first column to make the text clearer.
+worksheet:set_column("A:A", 500)
+worksheet:set_column("B:B", 500)
+
+-- Add a bold format to use to highlight cells.
+local bold = workbook:add_format({bold = true})
+
+worksheet:write("A1", "Вопросы анкеты", bold)
+worksheet:write("B1", "Ответы", bold)
+worksheet:write("A2", "ФИО")
+worksheet:write("B2", string.format("%s %s %s", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName))
+worksheet:write("A3", "Продукт")
+worksheet:write("B3", productFullName)
+
+local i=3
+for k,v in pairs(body) do
+    worksheet:write(i, 0, k)
+    worksheet:write(i, 1, v)
+    i=i+1
+end
+
+workbook:close()
+
 ----------------
 local attachId= attacher.attachFileToPatient(tmpServer, ngx.req.get_headers()["cookie"],filePath, "LAB_RESULT")
 if(attachId~=nil and attachId~="") then
@@ -69,7 +94,7 @@ if(attachId~=nil and attachId~="") then
 else
     utils.logError("WITH ORDER "..productOrderId .. " not attach file")
     local subject = string.format("Пользователь %s %s %s(%s) заполнил анкету.", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName, patientInfo.id)
-    local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s \n\n\n АНКЕТА:\n %s", subject, productId, productOrderId, cjson.encode(patientInfo), csv)
+    local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s \n\n\n АНКЕТА:\n %s", subject, productId, productOrderId, cjson.encode(patientInfo), xlsx)
     local to = string.format("<%s>",os.getenv("SMTP_TO"))
     smtp.sendMail(ngx, to, subject, message)
 end
