@@ -65,8 +65,8 @@ local workbook  = Workbook:new(filePath)
 local worksheet = workbook:add_worksheet()
 
 -- Widen the first column to make the text clearer.
-worksheet:set_column("A:A", 500)
-worksheet:set_column("B:B", 500)
+worksheet:set_column("A:A", 80)
+worksheet:set_column("B:B", 100)
 
 -- Add a bold format to use to highlight cells.
 local bold = workbook:add_format({bold = true})
