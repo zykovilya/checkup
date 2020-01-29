@@ -2,7 +2,7 @@ local _M = {}
 local smtp = require("resty.smtp")
 local utils = require "lua.modules.utils"
 
-
+-- https://github.com/GUI/lua-resty-mail
 -- returtn patientInfo or exception
 function _M.sendMail(ngx, to, subject, message)
 
@@ -38,8 +38,8 @@ function _M.sendMail(ngx, to, subject, message)
     if not res or error then
         ngx.status = ngx.HTTP_INTERNAL_SERVER_ERROR
         local message = string.format("Error while send mail(%s) ", to);
-        ngx.print(utils.getErrorResponse("ERROR",message .. error))
-        ngx.log(ngx.ERR, message)
+        ngx.print(utils.getErrorResponse("ERROR", error))
+        ngx.log(ngx.ERR, message .. error)
         return ngx.exit(500)
     end
 

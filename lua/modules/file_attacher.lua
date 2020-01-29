@@ -3,10 +3,7 @@ local utils = require "lua.modules.utils"
 local shell = require "resty.shell"
 
 
-function _M.attachFileToPatient(cookie, filePath)
-
-    local url ="https://test-telemed.drclinics.ru"
-
+function _M.attachFileToPatient(url, cookie, filePath, fileType)
     local stdin = ""
     local timeout = 2000  -- ms
     local max_size = 10000  -- byte
@@ -20,9 +17,9 @@ function _M.attachFileToPatient(cookie, filePath)
     utils.log("exec add file result = : " .. stdout)
 
 
-    command = [[curl -X POST '%s/api/patient/document/%s'  -H 'Cookie: %s' ]]
+    command = [[curl -X POST '%s/api/patient/document/%s' -H 'Content-Type: application/json' -H 'Cookie: %s' -d '{"fileType":"%s"}']]
     utils.log("exec attach: " .. command)
-    command = string.format(command,url,stdout, cookie)
+    command = string.format(command, url, stdout, cookie, fileType)
 
     ok, stdout, stderr, reason, status =  shell.run(command, stdin, timeout, max_size)
     utils.log("exec attach result: " .. stdout)
