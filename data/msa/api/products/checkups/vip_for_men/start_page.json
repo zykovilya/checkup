@@ -1,10 +1,22 @@
 {
-    "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic1.png",
-    "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/labs",
-    "sendLaboratoryEndpoint": "{{TMP_SERVER_URL}}/msa/api/analyses/order",
-    "complexName": "VIP- обследование для мужчин",
-    "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: personId=${personId}, productId=${productId}, productOrderId=${productOrderId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
-    "preparationButton": {
+    "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/vip_for_men.jpg",
+    "title": {
+        "description": "Программа обследования",
+        "header": "VIP обследование для мужчин"
+    },
+    "items": [
+        {
+            "description": "Материал для анализов",
+            "header": "Кровь и Моча",
+            "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/materialsImg.png"
+        },
+        {
+            "description": "Срок готовности анализов",
+            "header": "До 6 рабочих дней",
+            "iconUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/icons/dateImg.png"
+        }
+    ],
+    "descriptionButton": {
         "name": "Как подготовиться к сдаче анализов",
         "descriptionContent": {
             "title": "Как подготовиться к анализам",
@@ -73,5 +85,9 @@
                 }
             ]
         }
-    }
+    },
+    "nextButton": {
+        "name": "Записаться в лабораторию"
+    },
+    "description": "Программа VIP обследование для мужчин представляет собой вариант расширенного обследования организма, направленного на глубокую оценку состояния здоровья. \nПо результатам обследования вы получите:\n- выявление индивидуальных факторов риска \n- раннюю диагностику заболеваний \n- онлайн-консультацию врача-специалиста с рекомендациями по сохранению здоровья и повышению резервных возможностей организма."
 }
