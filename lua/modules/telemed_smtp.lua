@@ -30,7 +30,7 @@ function _M.sendMail(ngx, to, subject, message)
         password = os.getenv("SMTP_PASSWORD"),
         server = os.getenv("SMTP_SERVER"),
         port = os.getenv("SMTP_PORT"),
-        ssl = { enable = os.getenv("SMTP_SSL"), verify_cert = false }
+        ssl = { enable = false, verify_cert = false }
     }
 
     ngx.log(ngx.NOTICE, string.format("Send mail: %s, %s, %s, %s, %s, %s", to, from, os.getenv("SMTP_USER"), os.getenv("SMTP_SERVER"), os.getenv("SMTP_PORT"), os.getenv("SMTP_PASSWORD")))
