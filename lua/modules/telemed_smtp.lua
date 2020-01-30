@@ -38,7 +38,7 @@ function _M.sendMail(ngx, to, subject, message)
     if not res or error then
         ngx.status = ngx.HTTP_INTERNAL_SERVER_ERROR
         local message = string.format("Error while send mail(%s) ", to);
-        ngx.print(utils.getErrorResponse("ERROR", error))
+        ngx.print(utils.getErrorResponse("ERROR", "Ошибка при отправке сообщения"))
         ngx.log(ngx.ERR, message .. error)
         return ngx.exit(500)
     end
