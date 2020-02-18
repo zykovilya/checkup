@@ -7,9 +7,9 @@ local personId  = ngx.var.personId
 local productOrderId  = ngx.var.productOrderId
 
 
-local patientInfo = auth.patientInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",personId)
+local personInfo = auth.personInfo(ngx,os.getenv("TMP_SERVER_URL").."/api/auth/person",personId)
 
-ngx.header["firstName"] = patientInfo.firstName
+ngx.header["firstName"] = personInfo.firstName
 
 
 local function getFileName(dirName, personId,productOrderId)

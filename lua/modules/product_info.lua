@@ -4,7 +4,7 @@ local cjson = require "cjson"
 local utils = require "lua.modules.utils"
 
 
--- returtn patientInfo or exception
+-- returtn product Info or exception
 function _M.getProductInfo(serverUrl, productId)
     utils.checkNotNull(serverUrl, "serverUrl is null")
     utils.checkNotNull(productId, "productId is null")

@@ -27,11 +27,11 @@ local productId = utils.checkNotNull(params.productId, "need productId")
 local productOrderId = utils.checkNotNull(params.productOrderId, "need productOrderId")
 local laboratoryOfficeId = utils.checkNotNull(params.laboratoryOfficeId, "need laboratoryOfficeId")
 local oldLaboratoryOfficeId = params.oldLaboratoryOfficeId
-local patientInfo = auth.patientInfo(ngx, tmpServer.."/api/auth/person", personId)
+local personInfo = auth.personInfo(ngx, tmpServer.."/api/auth/person", personId)
 local complexName = params.complexName
 
 -----------
-local fio = string.format("%s %s %s", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName);
+local fio = string.format("%s %s %s", personInfo.firstName, personInfo.middleName, personInfo.lastName);
 
 local office = labOffices.getLabOffice(msaServer, laboratoryOfficeId)
 local oldOffice
@@ -84,7 +84,7 @@ local bodyPattern = [=[
 ]=]
 
 local subject ="ЗАПИСЬ В ЛАБОРАТОРИЮ: " .. fio
-local message = string.format(bodyPattern, fio, patientInfo.id, patientInfo.email, patientInfo.formattedPhone , patientInfo.username,
+local message = string.format(bodyPattern, fio, personInfo.id, personInfo.email, personInfo.formattedPhone , personInfo.username,
                                            office.laboratory, laboratoryOfficeId, office.address, office.url,
                                            productOrderId, productFullName, productId, complexName)
 

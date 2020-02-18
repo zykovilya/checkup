@@ -22,7 +22,7 @@ end
 local personId = utils.checkNotNull(params.personId, "need personId")
 local productId = utils.checkNotNull(params.productId, "need productId")
 local productOrderId = utils.checkNotNull(params.productOrderId, "need productOrderId")
-local patientInfo = auth.patientInfo(ngx, os.getenv("TMP_SERVER_URL").."/api/auth/person", personId)
+local personInfo = auth.personInfo(ngx, os.getenv("TMP_SERVER_URL").."/api/auth/person", personId)
 
 local body = {}
 for k,v in pairs(params) do
@@ -43,7 +43,7 @@ for k,v in pairs(params) do
     end
 end
 
-local fio = string.format("%s %s %s", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName);
+local fio = string.format("%s %s %s", personInfo.firstName, personInfo.middleName, personInfo.lastName);
 local productInfo = products.getProductInfo(tmpServer, productId)
 local productFullName = ""
 if productInfo ~= nil then
@@ -74,7 +74,7 @@ local bold = workbook:add_format({bold = true})
 worksheet:write("A1", "Вопросы анкеты", bold)
 worksheet:write("B1", "Ответы", bold)
 worksheet:write("A2", "ФИО")
-worksheet:write("B2", string.format("%s %s %s", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName))
+worksheet:write("B2", string.format("%s %s %s", personInfo.firstName, personInfo.middleName, personInfo.lastName))
 worksheet:write("A3", "Продукт")
 worksheet:write("B3", productFullName)
 
@@ -93,8 +93,8 @@ if(attachId~=nil and attachId~="") then
     utils.log("WITH ORDER "..productOrderId .. " [ATTACH_ID]= ".. cjson.encode(attachId))
 else
     utils.logError("WITH ORDER "..productOrderId .. " not attach file")
-    local subject = string.format("Пользователь %s %s %s(%s) заполнил анкету.", patientInfo.firstName, patientInfo.middleName, patientInfo.lastName, patientInfo.id)
-    local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s \n\n\n АНКЕТА:\n %s", subject, productId, productOrderId, cjson.encode(patientInfo), xlsx)
+    local subject = string.format("Пользователь %s %s %s(%s) заполнил анкету.", personInfo.firstName, personInfo.middleName, personInfo.lastName, personInfo.id)
+    local message = string.format("%s \n Продукт:%s, \n Заказ:%s. \n %s \n\n\n АНКЕТА:\n %s", subject, productId, productOrderId, cjson.encode(personInfo), xlsx)
     local to = string.format("<%s>",os.getenv("SMTP_TO"))
     smtp.sendMail(ngx, to, subject, message)
 end

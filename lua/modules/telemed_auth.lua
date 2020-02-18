@@ -4,8 +4,8 @@ local cjson = require "cjson"
 local utils = require "lua.modules.utils"
 
 
--- returtn patientInfo or exception
-function _M.patientInfo(ngx, url, referencepersonId)
+-- returtn personInfo or exception
+function _M.personInfo(ngx, url, referencepersonId)
     local httpc = http.new()
     local cookie = ngx.req.get_headers()["cookie"]
     --ngx.header["Cookie"] = cookie
@@ -43,19 +43,19 @@ function _M.patientInfo(ngx, url, referencepersonId)
         return ngx.exit(500)
     end
 
-    local patientInfo = cjson.decode(res.body)
+    local personInfo = cjson.decode(res.body)
 
-    if (referencepersonId ~= nil and patientInfo.id ~= referencepersonId) then
+    if (referencepersonId ~= nil and personInfo.id ~= referencepersonId) then
         ngx.status = 403
-        ngx.print(utils.getErrorResponse("FORBIDDEN",string.format("Auth failed: persons is not equals (%s,%s) ", referencepersonId, patientInfo.id)))
+        ngx.print(utils.getErrorResponse("FORBIDDEN",string.format("Auth failed: persons is not equals (%s,%s) ", referencepersonId, personInfo.id)))
         ngx.log(ngx.ERR, message)
         return ngx.exit(403)
     end
 
 
-    ngx.log(ngx.NOTICE, string.format("Patient is auth: id = %s, lastName=%s", patientInfo.id, patientInfo.lastName))
+    ngx.log(ngx.NOTICE, string.format("Patient is auth: id = %s, lastName=%s", personInfo.id, personInfo.lastName))
 
-    return patientInfo
+    return personInfo
 end
 
 return _M

@@ -3,7 +3,7 @@ local smtp = require("resty.smtp")
 local utils = require "lua.modules.utils"
 
 -- https://github.com/GUI/lua-resty-mail
--- returtn patientInfo or exception
+-- returtn personInfo or exception
 function _M.sendMail(ngx, to, subject, message)
 
     -- Загружаем библиотеку для работы с SMTP
