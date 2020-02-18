@@ -2,7 +2,7 @@ local cjson = require "cjson"
 local auth = require "lua.modules.telemed_auth"
 local products = require "lua.modules.product_info"
 local labOffices = require "lua.modules.get_office"
-local smtp = require "lua.modules.telemed_smtp"
+local patients = require "lua.modules.patient_info"
 local utils = require "lua.modules.utils"
 local productJsons = require "lua.modules.product_jsons"
 
@@ -74,8 +74,15 @@ end
 if office == nil then office = {} end
 if oldOffice == nil then oldOffice = {} end
 
+
+local patientInfo = patients.getPatientInfo(tmpServer);
+local patientId = nil ;
+if patientInfo ~= nil then
+    patientId = patientInfo["id"];
+end
+
 local bodyPattern = [=[
-Пользователь %s(id=%s, email=%s, phone=%s, username=%s)  записался в лабораторию "%s"
+Пользователь %s(patientId=%s, email=%s, phone=%s, username=%s)  записался в лабораторию "%s"
 офис(id=%s):
   адрес: %s
   ссылка: %s
@@ -84,7 +91,7 @@ local bodyPattern = [=[
 ]=]
 
 local subject ="ЗАПИСЬ В ЛАБОРАТОРИЮ: " .. fio
-local message = string.format(bodyPattern, fio, personInfo.id, personInfo.email, personInfo.formattedPhone , personInfo.username,
+local message = string.format(bodyPattern, fio, patientId, personInfo.email, personInfo.formattedPhone , personInfo.username,
                                            office.laboratory, laboratoryOfficeId, office.address, office.url,
                                            productOrderId, productFullName, productId, complexName)
 
