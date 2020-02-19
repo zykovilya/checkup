@@ -16,7 +16,7 @@ function _M.getPatientInfo(serverUrl)
         return utils.ngxReturnExit(403, "FORBIDDEN", "required Cookie")
     end
 
-    utils.log("CALL" .. serverUrl .. "/api/patient")
+   -- utils.log("CALL" .. serverUrl .. "/api/patient")
     local res, err = httpc:request_uri(serverUrl .. "/api/patient", {
         method = "GET",
         headers = {
@@ -33,7 +33,7 @@ function _M.getPatientInfo(serverUrl)
     else
         patientInfo = cjson.decode(res.body)
     end
-    utils.log("PATIENT INFO" .. res.body)
+    -- utils.log("PATIENT INFO" .. res.body)
 
     return patientInfo
 end
