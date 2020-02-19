@@ -3,6 +3,7 @@ local auth = require "lua.modules.telemed_auth"
 local products = require "lua.modules.product_info"
 local labOffices = require "lua.modules.get_office"
 local patients = require "lua.modules.patient_info"
+local smtp = require "lua.modules.telemed_smtp"
 local utils = require "lua.modules.utils"
 local productJsons = require "lua.modules.product_jsons"
 
