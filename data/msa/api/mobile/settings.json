@@ -1,0 +1,6 @@
+{
+  "startSubscriptionPurchaseURL": "https://test-telemed.drclinics.ru/subscriptions/purchase",
+  "endSubscriptionPurchaseURL": "https://test-telemed.drclinics.ru/subscriptions/purchase/success",
+  "startSubscriptionProfileURL": "https://test-telemed.drclinics.ru/subscriptions/profile",
+  "endSubscriptionProfileURL": "https://test-telemed.drclinics.ru/subscriptions/profile/success"
+}
