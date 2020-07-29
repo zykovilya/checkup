@@ -1,0 +1,44 @@
+[
+    {
+        "title": {
+            "content": "Всего 3 простых шага \n1. Сдайте анализы",
+            "textColor": "#REF!"
+        },
+        "description": {
+            "content": "Для оценки состояния организма запишитесь в удобную для Вас лабораторию и сдайте анализы",
+            "textColor": "#REF!"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/cosm/slide1.png",
+            "color": ""
+        }
+    },
+    {
+        "title": {
+            "content": "2. Заполните анкету",
+            "textColor": "#FFFFFF"
+        },
+        "description": {
+            "content": "Анкета поможет врачу получить более полную информацию перед началом консультации",
+            "textColor": "#REF!"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/diet/slide2.png",
+            "color": ""
+        }
+    },
+    {
+        "title": {
+            "content": "3. Запишитесь на онлайн-консультацию",
+            "textColor": "#FFFFFF"
+        },
+        "description": {
+            "content": "Врач поможет разобраться в результатах Ваших анализов и составит карту молодости на основании особенностей Вашего организма",
+            "textColor": "#FFFFFF"
+        },
+        "background": {
+            "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/diet/slide3.png",
+            "color": ""
+        }
+    }
+]
