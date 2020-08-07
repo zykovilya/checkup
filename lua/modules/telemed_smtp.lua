@@ -1,5 +1,5 @@
 local _M = {}
-local smtp = require("resty.mail")
+local mail = require("resty.mail")
 local utils = require "lua.modules.utils"
 
 -- https://github.com/GUI/lua-resty-mail
