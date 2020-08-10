@@ -3,6 +3,7 @@ RUN apt-get install iputils-ping -y && apt-get install iputils-tracepath -y && a
 #RUN export DEBIAN_FRONTEND=noninteractive &&  apt-get  -yq install wkhtmltopdf
 RUN rm -rf /var/lib/apt/lists/*
 
+RUN git config --global url."https://".insteadOf git://
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-http
 RUN /usr/local/openresty/luajit/bin/luarocks install resty-smtp
 RUN /usr/local/openresty/luajit/bin/luarocks install zipwriter
