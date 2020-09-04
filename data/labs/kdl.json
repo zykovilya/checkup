@@ -1,7 +1,7 @@
 {
   "id": "kdl",
   "name": "КДЛ",
-  "logo": "https://test-telemed.drclinics.ru/msa/api/labs/images/kdl.png",
+  "logo": "{{TMP_SERVER_URL}}/msa/api/labs/images/kdl.png",
   "color": "#55ee16",
   "offices": [
     {
