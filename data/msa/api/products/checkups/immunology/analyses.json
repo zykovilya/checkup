@@ -2,7 +2,7 @@
     "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic1.png",
     "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/labs",
     "sendLaboratoryEndpoint": "{{TMP_SERVER_URL}}/msa/api/analyses/order",
-    "complexName": "Сахарный диабет",
+    "complexName": "Иммунология",
     "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: personId=${personId}, productId=${productId}, productOrderId=${productOrderId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
     "preparationButton": {
         "name": "Как подготовиться к сдаче анализов",
@@ -18,21 +18,10 @@
                     "title": "В обследование входят следующие лабораторные тесты:",
                     "items": [
                         "Общий анализ крови (без лейкоцитарной формулы и СОЭ (Complete Blood Count, CBC",
-                        "Лейкоцитарная формула (дифференцированный подсчет лейкоцитов, лейкоцитограмма, Differential White Blood Cell Count с микроскопией мазка крови при наличии патологических сдвигов*",
-                        "СОЭ (Скорость Оседания Эритроцитов, ESR",
-                        "Общий анализ мочи (с микроскопией осадка",
-                        "Альбумин/креатинин-соотношение в разовой порции мочи (Отношение альбумина к креатинину в разовой порции мочи (Albumin-to-creatinine ratio, ACR, random urine",
-                        "АлАТ (АЛТ, Аланинаминотрансфераза, аланинтрансаминаза, SGPT, Alanine aminotransferase",
-                        "АсАТ (АСТ, аспартатаминотрансфераза, AST, SGOT, Aspartate aminotransferase",
-                        "Мочевина (Urea",
-                        "Креатинин (Creatinine",
-                        "Билирубин общий (Bilirubin total",
-                        "Билирубин прямой (билирубин конъюгированный, связанный; Bilirubin direct",
-                        "Глюкоза (Glucose",
-                        "Гликированный гемоглобин (HbA1С, Glycated Hemoglobin",
-                        "С-Пептид (C-Peptide",
-                        "Инсулин (Insulin",
-                        "Взятие крови"
+                        " СОЭ (Скорость Оседания Эритроцитов, ESR",
+                        " Лейкоцитарная формула (дифференцированный подсчет лейкоцитов, лейкоцитограмма, Differential White Blood Cell Count с микроскопией мазка крови при наличии патологических сдвигов*",
+                        " Исследование интерферонового статуса (4 показателя: сыворо- точный интерферон; спонтанный интерферон; интерферон-альфа; интерферон-гамма",
+                        " Взятие крови"
                     ]
                 }
             ]

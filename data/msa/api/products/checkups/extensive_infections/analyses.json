@@ -1,0 +1,40 @@
+{
+    "imageUrl": "{{TMP_SERVER_URL}}/msa/api/images/checkup/pic1.png",
+    "laboratoriesUrl": "{{TMP_SERVER_URL}}/msa/api/labs",
+    "sendLaboratoryEndpoint": "{{TMP_SERVER_URL}}/msa/api/analyses/order",
+    "complexName": "Развернутый скрининг на инфекции",
+    "//": "endpoint для отправки выбранной лаборатории; Параметры POST запроса: personId=${personId}, productId=${productId}, productOrderId=${productOrderId}, laboratoryOfficeId=${laboratoryOfficeId}, oldLaboratoryOfficeId=${oldLaboratoryOfficeId}",
+    "preparationButton": {
+        "name": "Как подготовиться к сдаче анализов",
+        "descriptionContent": {
+            "title": "Как подготовиться к анализам",
+            "blocks": [
+                {
+                    "title": "Общий анализ крови",
+                    "description": "Сдача крови происходит натощак, прием пищи необходимо исключить минимум за 8 часов до сдачи анализа. Накануне исследования рекомендуется ограничить повышенные психоэмоциональные и физические нагрузки (спортивные тренировки), интимную близость, тепловые воздействия (сауну), приём алкоголя, за час до исследования – курение. Желательно находиться в покое 20-30 мин. перед взятием крови.",
+                    "items": []
+                },
+                {
+                    "title": "В обследование входят следующие лабораторные тесты:",
+                    "items": [
+                        "Антитела класса IgG к антигенам описторхиса (anti-Opisthorchis IgG",
+                        " Антитела класса IgG к антигенам токсокар (anti-Toxocara IgG",
+                        " Антитела класса IgG к антигенам эхинококка (anti-Echinococcus IgG",
+                        " Антитела класса IgG к антигенам трихинелл (Аnti-Trichinella IgG",
+                        " Сифилис RPR (Rapid Plasma Reagin – антикардиолипиновый тест",
+                        " Антитела к ВИЧ 1 / 2 и антиген ВИЧ 1 / 2 (HIV Ag/Ab Combo**",
+                        " HBsAg, качественный тест (HBs-антиген, поверхностный антиген вируса гепатита B, «австралийский» антиген",
+                        " Антитела к вирусу гепатита C класса IgM и IgG (anti - HCV total**",
+                        " Микобактерии туберкулеза, определение ДНК (Mycobacterium tuberculosis, DNA*",
+                        " Антитела класса IgG к Helicobacter pylori (anti-Helicobacter pylori IgG",
+                        " Антитела класса IgA к Chlamydia trachomatis (anti-Chlamydia trachomatis IgA и Антитела класса IgG к Chlamydia trachomatis (anti-Chlamydia trachomatis IgG - раздельно",
+                        " Антитела класса IgM к Mycoplasma hominis (anti-Mycoplasma hominis IgM и Антитела класса IgG к Mycoplasma hominis (anti-Mycoplasma hominis IgG",
+                        " Антитела класса IgG к Тoxoplasma gondii (anti-Toxoplasma gondii IgG",
+                        " Антитела класса IgM к Тoxoplasma gondii (anti-Toxoplasma gondii IgM",
+                        " Взятие крови"
+                    ]
+                }
+            ]
+        }
+    }
+}
